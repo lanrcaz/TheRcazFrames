@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger)
 export default function ClientSlideCarousel() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
-  const slidesContainerRef = useRef<HTMLDivElement>(null)
   const [activeSlide, setActiveSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -38,67 +37,30 @@ export default function ClientSlideCarousel() {
     return () => { emblaApi.off('select', onSelect) }
   }, [emblaApi])
 
-  // Desktop: Global snap for pinned slides
+  // Desktop: Active slide tracking via IntersectionObserver
   useEffect(() => {
     if (isMobile) return
+    const section = sectionRef.current
+    if (!section) return
 
-    // Wait for all slide ScrollTriggers to be created
-    const timer = setTimeout(() => {
-      const pinned = ScrollTrigger.getAll()
-        .filter(st => st.vars.pin)
-        .sort((a, b) => a.start - b.start)
+    const slides = section.querySelectorAll('[data-slide-index]')
+    if (!slides.length) return
 
-      const maxScroll = ScrollTrigger.maxScroll(window)
-      if (!maxScroll || pinned.length === 0) return
-
-      // Build snap targets from pinned slide ranges
-      const pinnedRanges = pinned.map(st => ({
-        start: st.start / maxScroll,
-        end: (st.end ?? st.start) / maxScroll,
-        center: (st.start + ((st.end ?? st.start) - st.start) * 0.5) / maxScroll,
-      }))
-
-      // Global snap
-      const globalSnap = ScrollTrigger.create({
-        snap: {
-          snapTo: (value: number) => {
-            // Check if within any pinned range (with buffer)
-            const inPinned = pinnedRanges.some(
-              r => value >= r.start - 0.02 && value <= r.end + 0.02
-            )
-            if (!inPinned) return value // Free scroll outside pinned
-
-            // Find nearest slide center
-            const target = pinnedRanges.reduce((closest, r) =>
-              Math.abs(r.center - value) < Math.abs(closest - value) ? r.center : closest,
-              pinnedRanges[0]?.center ?? 0
-            )
-            return target
-          },
-          duration: { min: 0.15, max: 0.35 },
-          delay: 0.1,
-          ease: 'power2.inOut',
+    const observers: IntersectionObserver[] = []
+    slides.forEach((slide, i) => {
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSlide(i)
+          }
         },
-      })
+        { threshold: 0.3 }
+      )
+      obs.observe(slide)
+      observers.push(obs)
+    })
 
-      // Update active slide indicator
-      const onUpdate = () => {
-        const scrollY = window.scrollY
-        const current = pinned.findIndex(st => {
-          const end = st.end ?? st.start
-          return scrollY >= st.start - 100 && scrollY < end - 100
-        })
-        if (current !== -1) setActiveSlide(current)
-      }
-      window.addEventListener('scroll', onUpdate, { passive: true })
-
-      return () => {
-        globalSnap.kill()
-        window.removeEventListener('scroll', onUpdate)
-      }
-    }, 500)
-
-    return () => clearTimeout(timer)
+    return () => observers.forEach(o => o.disconnect())
   }, [isMobile])
 
   // Header reveal animation
@@ -134,13 +96,12 @@ export default function ClientSlideCarousel() {
     if (isMobile && emblaApi) {
       emblaApi.scrollTo(index)
     } else {
-      // Desktop: scroll to the slide's ScrollTrigger position
-      const pinned = ScrollTrigger.getAll()
-        .filter(st => st.vars.pin)
-        .sort((a, b) => a.start - b.start)
-      if (pinned[index]) {
-        const target = pinned[index].start + 1 // Slight offset to trigger
-        window.scrollTo({ top: target, behavior: 'smooth' })
+      // Desktop: scroll the target slide into view
+      const section = sectionRef.current
+      if (!section) return
+      const slide = section.querySelector(`[data-slide-index="${index}"]`)
+      if (slide) {
+        slide.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     }
   }, [isMobile, emblaApi])
@@ -303,8 +264,8 @@ export default function ClientSlideCarousel() {
           </div>
         </div>
       ) : (
-        // Desktop: Scroll-driven pinned slides
-        <div ref={slidesContainerRef}>
+        // Desktop: Normal flowing sections — no pin, no snap
+        <div>
           {clientSlides.map((slide, index) => (
             <ClientSlide key={slide.id} data={slide} index={index} />
           ))}

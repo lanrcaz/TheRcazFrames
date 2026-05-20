@@ -1,10 +1,6 @@
-import { useRef, useLayoutEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef, useState } from 'react'
 import type { ClientSlideData } from './clientData'
 import { ArrowRight } from 'lucide-react'
-
-gsap.registerPlugin(ScrollTrigger)
 
 interface ClientSlideProps {
   data: ClientSlideData
@@ -13,141 +9,36 @@ interface ClientSlideProps {
 
 export default function ClientSlide({ data, index }: ClientSlideProps) {
   const slideRef = useRef<HTMLDivElement>(null)
-  const bgBlurRef = useRef<HTMLDivElement>(null)
-  const primaryImgRef = useRef<HTMLDivElement>(null)
-  const secondaryImgRef = useRef<HTMLDivElement>(null)
-  const numberRef = useRef<HTMLSpanElement>(null)
-  const nameRef = useRef<HTMLHeadingElement>(null)
-  const metaRef = useRef<HTMLDivElement>(null)
-  const descRef = useRef<HTMLParagraphElement>(null)
-  const projectsRef = useRef<HTMLUListElement>(null)
-  const tagsRef = useRef<HTMLDivElement>(null)
-  const ctaRef = useRef<HTMLAnchorElement>(null)
-
+  const [visible, setVisible] = useState(false)
   const isTypeA = data.layout === 'A'
 
-  useLayoutEffect(() => {
-    const slide = slideRef.current
-    if (!slide) return
+  useEffect(() => {
+    const el = slideRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.15 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
-    const ctx = gsap.context(() => {
-      // Entrance timeline - scrubbed to scroll
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: slide,
-          start: 'top top',
-          end: '+=150%',
-          scrub: 0.5,
-          pin: true,
-          pinSpacing: true,
-        },
-      })
-
-      // 0-10%: Background blur image fades in
-      tl.fromTo(
-        bgBlurRef.current,
-        { opacity: 0 },
-        { opacity: 0.15, ease: 'none' },
-        0
-      )
-
-      // 10-25%: Primary image clip-path wipe-up reveal
-      tl.fromTo(
-        primaryImgRef.current,
-        { clipPath: 'inset(100% 0 0 0)' },
-        { clipPath: 'inset(0% 0 0 0)', duration: 0.15, ease: 'power3.inOut' },
-        0.10
-      )
-
-      // 20-30%: Secondary image wipe-up
-      tl.fromTo(
-        secondaryImgRef.current,
-        { clipPath: 'inset(100% 0 0 0)' },
-        { clipPath: 'inset(0% 0 0 0)', duration: 0.10, ease: 'power3.inOut' },
-        0.20
-      )
-
-      // 25-35%: Roman numeral fades in
-      tl.fromTo(
-        numberRef.current,
-        { opacity: 0, scale: 0.9 },
-        { opacity: 1, scale: 1, duration: 0.10, ease: 'power3.out' },
-        0.25
-      )
-
-      // 30-40%: Client name words reveal
-      const nameWords = nameRef.current?.querySelectorAll('.name-word')
-      if (nameWords) {
-        tl.fromTo(
-          nameWords,
-          { y: '100%', opacity: 0 },
-          { y: '0%', opacity: 1, stagger: 0.02, duration: 0.10, ease: 'power4.out' },
-          0.30
-        )
-      }
-
-      // 40-50%: Metadata + divider fade-up
-      tl.fromTo(
-        metaRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.08, ease: 'power3.out' },
-        0.40
-      )
-
-      // 45-55%: Description fade-up
-      tl.fromTo(
-        descRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.08, ease: 'power3.out' },
-        0.45
-      )
-
-      // 55-65%: Project list stagger
-      const projectItems = projectsRef.current?.querySelectorAll('li')
-      if (projectItems) {
-        tl.fromTo(
-          projectItems,
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.015, duration: 0.08, ease: 'power3.out' },
-          0.55
-        )
-      }
-
-      // 65-70%: Tags fade-up
-      tl.fromTo(
-        tagsRef.current,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.05, ease: 'power3.out' },
-        0.65
-      )
-
-      // 70-75%: CTA fade-up
-      tl.fromTo(
-        ctaRef.current,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.05, ease: 'power3.out' },
-        0.70
-      )
-
-      // 85-100%: Content exit animation
-      const exitDir = isTypeA ? 50 : -50
-      tl.to(
-        [numberRef.current, nameRef.current, metaRef.current, descRef.current, projectsRef.current, tagsRef.current, ctaRef.current],
-        { x: exitDir, opacity: 0, duration: 0.12, ease: 'power2.in' },
-        0.85
-      )
-      tl.to(
-        [primaryImgRef.current, secondaryImgRef.current],
-        { x: -exitDir * 0.5, opacity: 0, duration: 0.12, ease: 'power2.in' },
-        0.88
-      )
-
-      // Background exit
-      tl.to(bgBlurRef.current, { opacity: 0, duration: 0.10 }, 0.90)
-    }, slide)
-
-    return () => ctx.revert()
-  }, [isTypeA])
+  // Stagger delay constants (ms)
+  const DELAY_BG = 0
+  const DELAY_PRIMARY_IMG = 100
+  const DELAY_SECONDARY_IMG = 250
+  const DELAY_NUMBER = 200
+  const DELAY_NAME = 300
+  const DELAY_META = 400
+  const DELAY_DESC = 500
+  const DELAY_PROJECTS = 600
+  const DELAY_TAGS = 700
+  const DELAY_CTA = 800
 
   const contentPanel = (
     <div className="relative flex flex-col justify-center" style={{ padding: '3rem' }}>
@@ -165,15 +56,16 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
       <div className="relative z-10">
         {/* Decorative roman numeral */}
         <span
-          ref={numberRef}
-          className="absolute font-display font-light leading-none select-none pointer-events-none"
+          className="absolute font-display font-light leading-none select-none pointer-events-none transition-all duration-1000"
           style={{
             fontSize: 'clamp(6rem, 12vw, 10rem)',
             color: 'var(--color-text-muted)',
             letterSpacing: '-0.03em',
             top: '-2rem',
             [isTypeA ? 'right' : 'left']: '-1rem',
-            opacity: 0.3,
+            opacity: visible ? 0.3 : 0,
+            transform: visible ? 'scale(1)' : 'scale(0.9)',
+            transitionDelay: `${DELAY_NUMBER}ms`,
           }}
         >
           {data.romanNumeral}
@@ -181,10 +73,14 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
 
         {/* Label */}
         <span
-          className="font-mono tracking-[0.2em] uppercase block mb-3"
+          className="font-mono tracking-[0.2em] uppercase block mb-3 transition-all duration-800"
           style={{
             fontSize: 'clamp(0.6rem, 0.7vw, 0.7rem)',
             color: 'var(--color-text-muted)',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_NAME}ms`,
+            transitionProperty: 'opacity, transform',
           }}
         >
           CLIENT
@@ -192,12 +88,15 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
 
         {/* Client Name */}
         <h2
-          ref={nameRef}
-          className="font-display font-normal leading-[1.1] overflow-hidden mb-3"
+          className="font-display font-normal leading-[1.1] overflow-hidden mb-3 transition-all duration-800"
           style={{
             fontSize: 'clamp(2rem, 4vw, 3.5rem)',
             color: 'var(--color-text-primary)',
             letterSpacing: '0.02em',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_NAME}ms`,
+            transitionProperty: 'opacity, transform',
           }}
         >
           {data.name.split(' ').map((word, i) => (
@@ -208,7 +107,15 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
         </h2>
 
         {/* Project count + date range */}
-        <div ref={metaRef} className="mb-4">
+        <div
+          className="mb-4 transition-all duration-800"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_META}ms`,
+            transitionProperty: 'opacity, transform',
+          }}
+        >
           <span
             className="font-mono tracking-[0.12em] uppercase"
             style={{
@@ -222,32 +129,53 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
 
         {/* Divider */}
         <div
-          className="h-[1px] w-10 mb-4"
-          style={{ backgroundColor: 'var(--color-border)' }}
+          className="h-[1px] w-10 mb-4 transition-all duration-800"
+          style={{
+            backgroundColor: 'var(--color-border)',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_META}ms`,
+            transitionProperty: 'opacity, transform',
+          }}
         />
 
         {/* Description */}
         <p
-          ref={descRef}
-          className="font-body font-light leading-[1.7] mb-5"
+          className="font-body font-light leading-[1.7] mb-5 transition-all duration-800"
           style={{
             fontSize: 'clamp(0.875rem, 1vw, 1rem)',
             color: 'var(--color-text-secondary)',
             maxWidth: '400px',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_DESC}ms`,
+            transitionProperty: 'opacity, transform',
           }}
         >
           {data.description}
         </p>
 
         {/* Project list */}
-        <ul ref={projectsRef} className="space-y-2 mb-5">
-          {data.projects.map((project) => (
+        <ul
+          className="space-y-2 mb-5"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_PROJECTS}ms`,
+            transition: 'opacity 0.8s ease, transform 0.8s ease',
+          }}
+        >
+          {data.projects.map((project, i) => (
             <li
               key={project.name}
-              className="font-mono tracking-[0.08em]"
+              className="font-mono tracking-[0.08em] transition-all duration-700"
               style={{
                 fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)',
                 color: 'var(--color-text-tertiary)',
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: `${DELAY_PROJECTS + i * 80}ms`,
+                transitionProperty: 'opacity, transform',
               }}
             >
               {project.name} ({project.year}) — {project.type}
@@ -256,7 +184,15 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
         </ul>
 
         {/* Discipline tags */}
-        <div ref={tagsRef} className="flex flex-wrap gap-2 mb-5">
+        <div
+          className="flex flex-wrap gap-2 mb-5 transition-all duration-800"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_TAGS}ms`,
+            transitionProperty: 'opacity, transform',
+          }}
+        >
           {data.tags.map((tag) => (
             <span
               key={tag}
@@ -275,12 +211,15 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
 
         {/* CTA */}
         <a
-          ref={ctaRef}
           href="#"
           className="group inline-flex items-center gap-2 font-body font-medium uppercase tracking-[0.15em] transition-colors duration-300 hover:text-[#D4B87A]"
           style={{
             fontSize: '0.75rem',
             color: '#C9A96E',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(20px)',
+            transitionDelay: `${DELAY_CTA}ms`,
+            transition: 'opacity 0.8s ease, transform 0.8s ease, color 0.3s ease',
           }}
         >
           <span className="relative">
@@ -302,9 +241,11 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
     <div className="flex flex-col gap-2 h-full">
       {/* Primary image */}
       <div
-        ref={primaryImgRef}
-        className="flex-[7] min-h-0 rounded-[2px] overflow-hidden"
-        style={{ clipPath: 'inset(100% 0 0 0)' }}
+        className="flex-[7] min-h-0 rounded-[2px] overflow-hidden transition-all duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+        style={{
+          clipPath: visible ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)',
+          transitionDelay: `${DELAY_PRIMARY_IMG}ms`,
+        }}
       >
         <img
           src={data.images[0]}
@@ -315,9 +256,11 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
       </div>
       {/* Secondary image */}
       <div
-        ref={secondaryImgRef}
-        className="flex-[3] min-h-0 rounded-[2px] overflow-hidden"
-        style={{ clipPath: 'inset(100% 0 0 0)' }}
+        className="flex-[3] min-h-0 rounded-[2px] overflow-hidden transition-all duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+        style={{
+          clipPath: visible ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)',
+          transitionDelay: `${DELAY_SECONDARY_IMG}ms`,
+        }}
       >
         <img
           src={data.images[1]}
@@ -332,14 +275,13 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
   return (
     <div
       ref={slideRef}
-      className="relative min-h-[100dvh] w-full overflow-hidden"
+      className="relative min-h-[150vh] w-full overflow-hidden"
       data-slide-index={index}
     >
       {/* Background blur image for ambient color bleed */}
       <div
-        ref={bgBlurRef}
-        className="absolute inset-0 pointer-events-none"
-        style={{ opacity: 0 }}
+        className="absolute inset-0 pointer-events-none transition-opacity duration-1000"
+        style={{ opacity: visible ? 0.15 : 0, transitionDelay: `${DELAY_BG}ms` }}
       >
         <img
           src={data.images[0]}
@@ -353,8 +295,8 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
       </div>
 
       {/* Slide content */}
-      <div className="relative z-10 h-full min-h-[100dvh] flex items-center px-[var(--space-page-x)] py-[72px]">
-        <div className="max-w-[var(--max-content-width)] mx-auto w-full h-[calc(100dvh-144px)]">
+      <div className="relative z-10 min-h-[150vh] flex items-center px-[var(--space-page-x)] py-[72px]">
+        <div className="max-w-[var(--max-content-width)] mx-auto w-full" style={{ height: 'calc(100vh - 144px)' }}>
           {isTypeA ? (
             <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-4 h-full">
               <div className="h-full min-h-0">{imagePanel}</div>
