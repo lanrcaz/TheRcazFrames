@@ -1,20 +1,26 @@
-import { useState } from 'react'
-import '../App.css'
+import { useEffect } from 'react'
+import HeroSection from '../sections/HeroSection'
+import FeaturedWork from '../sections/FeaturedWork'
+import ClientCarousel from '../sections/ClientCarousel'
+import DisciplineSplit from '../sections/DisciplineSplit'
+import JourneySection from '../sections/JourneySection'
+import MarqueeStrip from '../sections/MarqueeStrip'
+import CTABand from '../sections/CTABand'
 
 export default function Home() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
+      <HeroSection />
+      <FeaturedWork />
+      <ClientCarousel />
+      <DisciplineSplit />
+      <JourneySection />
+      <MarqueeStrip />
+      <CTABand />
     </>
   )
 }

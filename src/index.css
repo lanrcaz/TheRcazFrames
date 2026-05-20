@@ -4,72 +4,88 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --color-bg-primary: #0A0A0A;
+    --color-bg-secondary: #111111;
+    --color-bg-tertiary: #1A1A1A;
+    --color-surface: rgba(255,255,255,0.04);
+    --color-surface-hover: rgba(255,255,255,0.08);
+    --color-border: rgba(255,255,255,0.08);
+    --color-border-hover: rgba(255,255,255,0.15);
+    --color-text-primary: #F5F0EB;
+    --color-text-secondary: #9A9590;
+    --color-text-tertiary: #6B6560;
+    --color-text-muted: rgba(245,240,235,0.35);
+    --color-accent-gold: #C9A96E;
+    --color-accent-gold-hover: #D4B87A;
+    --color-accent-copper: #B87333;
+    --color-accent-rose: #A67B7B;
+
+    --space-page-x: clamp(1.5rem, 5vw, 5rem);
+    --space-section-y: clamp(6rem, 12vh, 12rem);
+    --space-component: clamp(1rem, 2vw, 2rem);
+    --space-element: 0.75rem;
+
+    --border-radius-sm: 2px;
+    --border-radius-md: 4px;
+    --border-radius-lg: 8px;
+    --max-content-width: 1400px;
+    --max-narrow-width: 720px;
+
+    --background: 0 0% 4%;
+    --foreground: 30 23% 94%;
+    --card: 0 0% 7%;
+    --card-foreground: 30 23% 94%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 30 23% 94%;
+    --primary: 37 35% 61%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 30 23% 94%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 25 5% 55%;
+    --accent: 37 35% 61%;
+    --accent-foreground: 0 0% 4%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.625rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.08;
+    --ring: 37 35% 61%;
+    --radius: 0.25rem;
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  * {
+    @apply border-[rgba(255,255,255,0.08)];
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(201, 169, 110, 0.3);
+    color: var(--color-text-primary);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-label {
+    font-family: 'JetBrains Mono', monospace;
   }
 }
