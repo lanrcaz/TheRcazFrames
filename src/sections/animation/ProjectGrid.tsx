@@ -118,14 +118,12 @@ const PROJECTS: AnimationProject[] = [
 
 export default function ProjectGrid() {
   const [activeFilter, setActiveFilter] = useState<FilterCategory>('ALL')
-  const [revealed, setRevealed] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setRevealed(true)
           observer.disconnect()
         }
       },
