@@ -39,13 +39,13 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
       style={{
         backgroundColor: 'var(--color-surface)',
         border: '1px solid',
-        borderColor: hovered ? 'rgba(184,115,51,0.25)' : 'var(--color-border)',
+        borderColor: hovered ? 'rgba(201,169,110,0.25)' : 'var(--color-border)',
         borderRadius: 'var(--border-radius-md)',
         overflow: 'hidden',
         transition: 'border-color 400ms, box-shadow 400ms, transform 400ms',
         transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
         boxShadow: hovered
-          ? '0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(184,115,51,0.1)'
+          ? '0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(201,169,110,0.1)'
           : 'none',
       }}
     >
@@ -142,8 +142,8 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
                 letterSpacing: '0.12em',
                 padding: '0.3rem 0.6rem',
                 borderRadius: '2px',
-                border: '1px solid rgba(184,115,51,0.35)',
-                color: 'var(--color-accent-copper)',
+                border: '1px solid rgba(201,169,110,0.35)',
+                color: 'var(--color-accent-gold)',
               }}
             >
               {sw}

@@ -85,7 +85,7 @@ export default function PageHero() {
             HOME
           </Link>
           {' / '}
-          <span style={{ color: 'var(--color-text-muted)' }}>ANIMATION</span>
+          <span style={{ color: 'var(--color-text-muted)' }}>MOTION</span>
         </div>
 
         {/* Label */}
@@ -95,14 +95,14 @@ export default function PageHero() {
             fontSize: 'clamp(0.6rem, 0.7vw, 0.7rem)',
             letterSpacing: '0.2em',
             lineHeight: 1.4,
-            color: '#B87333',
+            color: '#C9A96E',
             opacity: revealed ? 1 : 0,
             transform: revealed ? 'translateY(0)' : 'translateY(20px)',
             transitionDelay: '300ms',
             marginBottom: '1rem',
           }}
         >
-          ANIMATION PORTFOLIO
+          MOTION PORTFOLIO
         </span>
 
         {/* Title with decorative rules */}
@@ -129,7 +129,7 @@ export default function PageHero() {
               transitionDelay: '500ms',
             }}
           >
-            ANIMATED WORKS
+            MOTION WORKS
           </h1>
 
           {/* Right decorative rule */}
@@ -156,7 +156,7 @@ export default function PageHero() {
             transitionDelay: '700ms',
           }}
         >
-          3D ANIMATION · 2D ANIMATION · MOTION GRAPHICS · STOP MOTION
+          BRAND FILM · TITLE SEQUENCE · KINETIC TYPE · UI MOTION · DATA VIZ
         </span>
       </div>
     </section>

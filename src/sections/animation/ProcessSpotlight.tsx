@@ -9,23 +9,23 @@ interface ProcessStep {
 const STEPS: ProcessStep[] = [
   {
     number: '01',
-    title: 'CONCEPT & STORYBOARD',
-    description: 'Every animation begins as a sketch. Thumbnails, beatboards, and animatics establish the visual language before a single pixel is rendered.',
+    title: 'CONCEPT & DIRECTION',
+    description: 'The brief becomes a creative vision. Moodboards, style frames, and motion tests establish the visual direction before production begins.',
   },
   {
     number: '02',
-    title: 'MODELING & DESIGN',
-    description: 'Characters, environments, and props are built with attention to silhouette, proportion, and the emotional weight of each shape.',
+    title: 'STYLE FRAMES & STORYBOARD',
+    description: 'Key frames are designed to lock the look and feel. Every transition, type treatment, and composition is planned as a still before it moves.',
   },
   {
     number: '03',
-    title: 'ANIMATION & PERFORMANCE',
-    description: 'Movement is meticulously crafted — key poses, timing charts, and in-between frames bring static models to living, breathing performance.',
+    title: 'ANIMATION & TIMING',
+    description: 'The heartbeat of the piece — keyframes, easing curves, and rhythmic cuts that give the work its energy and flow. Nothing is left to default.',
   },
   {
     number: '04',
-    title: 'LIGHTING & COMPOSITING',
-    description: 'The final layer of magic — light, atmosphere, color grade, and compositing that transforms renders into cinematic frames.',
+    title: 'SOUND & COMPOSITING',
+    description: 'The final layer — audio-reactive elements, precise compositing, color grade, and render that transforms frames into a cohesive film.',
   },
 ]
 
@@ -224,7 +224,7 @@ export default function ProcessSpotlight() {
                     style={{
                       fontSize: '2rem',
                       lineHeight: 1,
-                      color: 'var(--color-accent-copper)',
+                      color: 'var(--color-accent-gold)',
                     }}
                   >
                     {step.number}

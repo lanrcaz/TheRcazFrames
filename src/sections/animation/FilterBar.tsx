@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
-export type FilterCategory = 'ALL' | '3D ANIMATION' | '2D ANIMATION' | 'MOTION GRAPHICS' | 'STOP MOTION' | 'CHARACTER'
+export type FilterCategory = 'ALL' | 'BRAND FILM' | 'TITLE SEQUENCE' | 'KINETIC TYPE' | 'UI MOTION' | 'DATA VIZ' | 'MIXED MEDIA'
 
 interface FilterBarProps {
   activeFilter: FilterCategory
@@ -11,11 +11,12 @@ interface FilterBarProps {
 
 const FILTERS: FilterCategory[] = [
   'ALL',
-  '3D ANIMATION',
-  '2D ANIMATION',
-  'MOTION GRAPHICS',
-  'STOP MOTION',
-  'CHARACTER',
+  'BRAND FILM',
+  'TITLE SEQUENCE',
+  'KINETIC TYPE',
+  'UI MOTION',
+  'DATA VIZ',
+  'MIXED MEDIA',
 ]
 
 export default function FilterBar({ activeFilter, onFilterChange, projectCount }: FilterBarProps) {
@@ -67,9 +68,9 @@ export default function FilterBar({ activeFilter, onFilterChange, projectCount }
                 padding: '0.5rem 1rem',
                 borderRadius: '999px',
                 border: '1px solid',
-                borderColor: activeFilter === filter ? '#B87333' : 'rgba(255,255,255,0.12)',
-                backgroundColor: activeFilter === filter ? 'rgba(184,115,51,0.15)' : 'transparent',
-                color: activeFilter === filter ? '#B87333' : 'var(--color-text-secondary)',
+                borderColor: activeFilter === filter ? '#C9A96E' : 'rgba(255,255,255,0.12)',
+                backgroundColor: activeFilter === filter ? 'rgba(201,169,110,0.15)' : 'transparent',
+                color: activeFilter === filter ? '#C9A96E' : 'var(--color-text-secondary)',
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
