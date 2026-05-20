@@ -1,16 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
+import Film from './pages/Film'
 
 function FilmPage() {
-  return (
-    <div className="min-h-[100dvh] flex items-center justify-center pt-[72px]">
-      <div className="text-center">
-        <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-light text-[#F5F0EB]">Film</h1>
-        <p className="font-body text-[#9A9590] mt-4">Film portfolio coming soon.</p>
-      </div>
-    </div>
-  )
+  return <Film />
 }
 
 function AnimationPage() {
