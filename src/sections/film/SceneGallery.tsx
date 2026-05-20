@@ -13,52 +13,61 @@ interface GalleryImage {
 }
 
 const GALLERY_IMAGES: GalleryImage[] = [
+  // Travel Series — Music Producer
   {
-    src: '/film-scene-1a.jpg',
-    title: 'Echoes of Tide',
-    description: 'Low-angle hallway, dramatic shadows, noir lighting',
+    src: '/film/travel-series/scene-01.png',
+    title: 'Travel Series — Music Producer',
+    description: 'Burj Khalifa top-down aerial, geometric pool patterns below',
+    aspect: '1/1',
+  },
+  {
+    src: '/film/travel-series/scene-05.png',
+    title: 'Travel Series — Music Producer',
+    description: 'Yacht scene at golden hour, artist presence on deck',
     aspect: '16/9',
   },
   {
-    src: '/film-scene-1b.jpg',
-    title: 'Solstice',
-    description: 'Diner two-shot, practical lighting, rich colors',
+    src: '/film/travel-series/scene-18.png',
+    title: 'Travel Series — Music Producer',
+    description: 'Burj Al Arab golden hour approach, palm-lined drive',
+    aspect: '16/9',
+  },
+  // MCH — Lucid
+  {
+    src: '/film/mch-lucid-car/scene-01.png',
+    title: 'MCH — Lucid',
+    description: 'Abu Dhabi cityscape, modern architecture and skyline',
     aspect: '16/9',
   },
   {
-    src: '/film-scene-1c.jpg',
-    title: 'Neon Veins',
-    description: 'Aerial coastal road, morning fog',
+    src: '/film/mch-lucid-car/scene-10.png',
+    title: 'MCH — Lucid',
+    description: 'Lucid rear badge close-up, signature light bar detail',
     aspect: '2.39/1',
   },
   {
-    src: '/film-scene-1d.jpg',
-    title: 'Paper Boats',
-    description: 'Close-up of hands with photograph, warm window light',
+    src: '/film/mch-lucid-car/scene-17.png',
+    title: 'MCH — Lucid',
+    description: 'Arabic coffee pour, warm golden light, cultural texture',
+    aspect: '16/9',
+  },
+  // The Breaking Pointe — Red Bull
+  {
+    src: '/film/redbull-breaking-pointe/scene-01.png',
+    title: 'The Breaking Pointe — Red Bull',
+    description: 'B-boy mid-movement, dramatic rim light, raw energy',
     aspect: '4/3',
   },
   {
-    src: '/client-acme-scene-1.jpg',
-    title: 'Meridian',
-    description: 'Grand hallway, symmetrical, chandelier reflections',
-    aspect: '16/9',
+    src: '/film/redbull-breaking-pointe/scene-08.png',
+    title: 'The Breaking Pointe — Red Bull',
+    description: 'Athlete portrait, intense focus, battle-ready stance',
+    aspect: '3/2',
   },
   {
-    src: '/client-nova-scene-1.jpg',
-    title: 'Origin',
-    description: 'Car chase through European streets, motion blur',
-    aspect: '16/9',
-  },
-  {
-    src: '/client-aria-scene-2.jpg',
-    title: 'After Hours',
-    description: 'Vintage microphone, single spotlight, rim light',
-    aspect: '4/3',
-  },
-  {
-    src: '/client-metro-scene-1.jpg',
-    title: 'Cascade',
-    description: 'Luxury watch on marble, dramatic side lighting',
+    src: '/film/redbull-breaking-pointe/scene-15.png',
+    title: 'The Breaking Pointe — Red Bull',
+    description: 'Crew performance, dynamic stage lighting, kinetic flow',
     aspect: '16/9',
   },
 ]

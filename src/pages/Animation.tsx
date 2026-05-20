@@ -2,7 +2,6 @@ import PageHero from '@/sections/animation/PageHero'
 import ProjectGrid from '@/sections/animation/ProjectGrid'
 import ProcessSpotlight from '@/sections/animation/ProcessSpotlight'
 import CTABand from '@/sections/animation/CTABand'
-import Footer from '@/components/Footer'
 
 export default function Animation() {
   return (
@@ -11,7 +10,6 @@ export default function Animation() {
       <ProjectGrid />
       <ProcessSpotlight />
       <CTABand />
-      <Footer />
     </main>
   )
 }

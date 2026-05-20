@@ -4,7 +4,6 @@ import CareerTimeline from '@/sections/about/CareerTimeline'
 import PhilosophyGrid from '@/sections/about/PhilosophyGrid'
 import ToolsGrid from '@/sections/about/ToolsGrid'
 import CTABand from '@/sections/CTABand'
-import Footer from '@/components/Footer'
 
 export default function About() {
   return (
@@ -15,7 +14,6 @@ export default function About() {
       <PhilosophyGrid />
       <ToolsGrid />
       <CTABand />
-      <Footer />
     </main>
   )
 }
