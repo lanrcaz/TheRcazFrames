@@ -2,24 +2,24 @@ import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
-type FilterMode = 'film' | 'both' | 'animation'
+type FilterMode = 'film' | 'both' | 'motion'
 
 const FEATURED_DATA = {
   film: {
-    image: '/featured-film.jpg',
-    meta: '2024 \u00B7 NARRATIVE SHORT \u00B7 18 MIN',
-    title: 'ECHOES OF TIDE',
-    desc: 'A haunting coastal drama about memory, loss, and the stories we leave behind. Shot on 35mm film across three locations on the Pacific Northwest coast. Official Selection \u2014 Sundance Film Festival 2024.',
+    image: '/film/travel-series/scene-05.jpg',
+    meta: '2024 \u00B7 COMMERCIAL \u00B7 3 MIN',
+    title: 'TRAVEL SERIES \u2014 MUSIC PRODUCER',
+    desc: 'A cinematic travel series filmed across Dubai \u2014 from the soaring heights of the Burj Khalifa to golden hour yacht moments. Capturing the intersection of culture, luxury, and sound.',
     cta: 'VIEW PROJECT',
-    ctaLink: '/film#echoes-of-tide',
+    ctaLink: '/film',
   },
-  animation: {
-    image: '/featured-animation.jpg',
-    meta: '2024 \u00B7 ANIMATED SHORT \u00B7 12 MIN',
-    title: 'THE CLOCKWORK GARDEN',
-    desc: 'A fantastical journey through a mechanical city where nature reclaims the gears of industry. 3D animated with hand-painted textures, blending steampunk aesthetics with organic wonder.',
+  motion: {
+    image: '/film/vw-gen-gti-docu/scene-01.jpg',
+    meta: '2023 \u00B7 BRANDED DOCUMENTARY \u00B7 5 MIN',
+    title: 'VW GEN GTI \u2014 DOCUMENTARY',
+    desc: 'A branded documentary exploring the legacy of the Volkswagen Golf GTI. From the original Mk1 to the latest generation \u2014 told through engineers, collectors, and drivers who live the hot hatch culture.',
     cta: 'VIEW PROJECT',
-    ctaLink: '/animation#clockwork-garden',
+    ctaLink: '/film',
   },
 }
 
@@ -88,7 +88,7 @@ export default function FeaturedWork() {
             className="inline-flex items-center rounded-full p-1 gap-1"
             style={{ border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            {(['film', 'both', 'animation'] as FilterMode[]).map((mode) => (
+            {(['film', 'both', 'motion'] as FilterMode[]).map((mode) => (
               <button
                 key={mode}
                 onClick={() => setFilter(mode)}
@@ -109,7 +109,7 @@ export default function FeaturedWork() {
                   />
                 )}
                 <span className="relative z-10">
-                  {mode === 'film' ? 'FILM' : mode === 'animation' ? 'ANIMATION' : 'BOTH'}
+                  {mode === 'film' ? 'FILM' : mode === 'motion' ? 'MOTION' : 'BOTH'}
                 </span>
               </button>
             ))}
@@ -200,8 +200,8 @@ function BothImages() {
       </div>
       <div className="overflow-hidden rounded-[var(--border-radius-md)] group cursor-pointer">
         <img
-          src={FEATURED_DATA.animation.image}
-          alt={FEATURED_DATA.animation.title}
+          src={FEATURED_DATA.motion.image}
+          alt={FEATURED_DATA.motion.title}
           className="w-full aspect-video object-cover transition-transform duration-600 group-hover:scale-[1.03]"
         />
       </div>
@@ -236,7 +236,7 @@ function BothContent() {
           color: 'var(--color-text-secondary)',
         }}
       >
-        Explore our latest work across film and animation. Each project represents a unique story told through a distinct visual lens.
+        Film is the focus — motion is the foundation. Explore work across directing, branded content, and motion graphics systems.
       </p>
       <div className="mt-6 flex flex-col sm:flex-row gap-4">
         <Link
@@ -250,11 +250,11 @@ function BothContent() {
           <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
         </Link>
         <Link
-          to="/animation"
+          to="/motion"
           className="group inline-flex items-center gap-2 font-body text-xs font-medium tracking-[0.15em] uppercase text-[#C9A96E] transition-colors duration-300 hover:text-[#D4B87A]"
         >
           <span className="relative">
-            VIEW ANIMATION
+            VIEW MOTION
             <span className="absolute -bottom-0.5 left-0 h-[1px] w-full bg-[#C9A96E] origin-left scale-x-100 group-hover:scale-x-100 transition-transform duration-300" />
           </span>
           <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -343,7 +343,7 @@ function ProjectContent({
             document.getElementById('discipline-split')?.scrollIntoView({ behavior: 'smooth' })
           }}
         >
-          OR EXPLORE ANIMATION &darr;
+          OR EXPLORE MOTION &darr;
         </Link>
       </div>
     </div>
