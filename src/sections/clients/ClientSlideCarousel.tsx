@@ -126,7 +126,7 @@ export default function ClientSlideCarousel() {
             color: 'var(--color-text-muted)',
           }}
         >
-          12 CLIENTS &middot; 40+ PROJECTS &middot; 10 YEARS
+          4 CLIENTS &middot; 8+ PROJECTS &middot; 3 YEARS
         </span>
         <h2
           className="header-animate font-display font-normal leading-[1.1] mb-4"

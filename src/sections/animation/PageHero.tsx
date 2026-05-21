@@ -35,7 +35,7 @@ export default function PageHero() {
         ref={bgRef}
         className="absolute inset-0 transition-opacity duration-[1500ms]"
         style={{
-          backgroundImage: 'url(/anim-project-1-hero.jpg)',
+          backgroundImage: 'url(/film/vw-gen-gti-docu/scene-01.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: revealed ? 1 : 0,
