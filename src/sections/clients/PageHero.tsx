@@ -85,7 +85,7 @@ export default function PageHero() {
         style={{ transform: 'translateY(0%)' }}
       >
         <img
-          src="/client-acme-scene-1.jpg"
+          src="/film/travel-series/scene-01.jpg"
           alt=""
           className="w-full h-full object-cover"
           style={{ opacity: 0.4 }}

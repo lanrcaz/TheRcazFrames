@@ -94,11 +94,11 @@ export default function DisciplineSplit() {
 
         {/* Film Column */}
         <DisciplineCard
-          bgImage="/film-project-1-hero.jpg"
+          bgImage="/film/vox-bad-boys-ii/scene-01.jpg"
           icon={<Clapperboard size={32} style={{ color: 'var(--color-accent-gold)' }} />}
           title="FILM"
           subtitle="DIRECTING"
-          description="Narrative shorts, branded content, music videos, and commercial work. A focus on visual storytelling that moves audiences — shot on film and digital, graded with intent."
+          description="TVCs, branded content, automotive, travel docs, and documentary work. Currently deep into filming — from Burj Khalifa aerials to Dubai desert landscapes. The camera is the primary tool."
           cta="EXPLORE FILM WORK"
           ctaLink="/film"
           revealed={revealed}
@@ -108,13 +108,13 @@ export default function DisciplineSplit() {
 
         {/* Animation Column */}
         <DisciplineCard
-          bgImage="/anim-project-1-hero.jpg"
+          bgImage="/film/redbull-breaking-pointe/scene-01.jpg"
           icon={<Sparkles size={32} style={{ color: 'var(--color-accent-copper)' }} />}
-          title="ANIMATION"
-          subtitle="MOTION & DESIGN"
-          description="3D and 2D animation, motion graphics, character design, and visual effects. From concept to final render — bringing impossible worlds to life frame by frame."
-          cta="EXPLORE ANIMATION"
-          ctaLink="/animation"
+          title="MOTION"
+          subtitle="GRAPHICS & SYSTEMS"
+          description="12+ years in motion design, broadcast, and post-production. After Effects, Cinema 4D, and AI film ecosystems — the foundation that now informs every frame of film work."
+          cta="EXPLORE MOTION"
+          ctaLink="/motion"
           revealed={revealed}
           delay={500}
           slideDir="right"

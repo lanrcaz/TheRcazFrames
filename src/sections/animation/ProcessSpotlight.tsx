@@ -262,7 +262,7 @@ export default function ProcessSpotlight() {
           <div className="lg:w-[55%] space-y-3">
             {/* Large feature image */}
             <ImageReveal
-              src="/featured-animation.jpg"
+              src="/film/redbull-breaking-pointe/scene-01.jpg"
               alt="The mechanical city at dusk — 3D animation render showcasing a fantastical steampunk metropolis"
               delay={0}
               aspectRatio="16/10"
@@ -271,14 +271,14 @@ export default function ProcessSpotlight() {
             {/* Two smaller images side by side */}
             <div className="flex gap-3">
               <ImageReveal
-                src="/anim-project-2-hero.jpg"
+                src="/film/music-travel-love-dubai/scene-05.jpg"
                 alt="Stylized urban rooftop scene at twilight — 2D animation frame"
                 delay={200}
                 aspectRatio="16/10"
                 className="flex-1"
               />
               <ImageReveal
-                src="/anim-project-3-hero.jpg"
+                src="/film/vw-gen-gti-docu/scene-10.jpg"
                 alt="Abstract flowing ribbons of light — motion graphics still frame"
                 delay={350}
                 aspectRatio="16/10"

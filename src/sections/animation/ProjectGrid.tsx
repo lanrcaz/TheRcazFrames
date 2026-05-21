@@ -13,7 +13,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '2 MIN',
     description: 'A kinetic brand film for a fintech startup. Geometric forms morph and intersect in sync with a driving electronic score, communicating trust and innovation.',
     software: ['C4D', 'AFTER EFFECTS'],
-    image: '/anim-project-1-hero.jpg',
+    image: '/film/travel-series/scene-01.jpg',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '90 SEC',
     description: 'Opening title sequence for a neo-noir streaming series. Typography emerges from shadow and smoke, letterforms dissolving and reforming in sync with the theme.',
     software: ['AFTER EFFECTS', 'OCTANE'],
-    image: '/featured-animation.jpg',
+    image: '/film/vox-bad-boys-ii/scene-01.jpg',
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '1 MIN',
     description: 'Real-time data visualization for a tech conference keynote. Abstract particle streams represent global network traffic, shifting from chaos to organized flow.',
     software: ['TOUCHDESIGNER', 'AE'],
-    image: '/client-aria-scene-1.jpg',
+    image: '/film/mch-lucid-car/scene-10.jpg',
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '45 SEC',
     description: 'Motion language for a music streaming app redesign. Micro-interactions, transitions, and ambient visualizers that respond to audio frequency in real-time.',
     software: ['FIGMA', 'AFTER EFFECTS'],
-    image: '/client-metro-scene-2.jpg',
+    image: '/film/music-travel-love-dubai/scene-08.jpg',
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '60 SEC',
     description: 'A typographic manifesto film for a creative agency. Words become architecture, collapsing and expanding in rhythm with a spoken-word voiceover.',
     software: ['AFTER EFFECTS', 'C4D'],
-    image: '/client-nova-scene-1.jpg',
+    image: '/film/redbull-breaking-pointe/scene-15.jpg',
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '3 MIN',
     description: 'Complete brand motion system for a luxury wellness brand. Fluid simulations of botanical extracts morphing into logo forms across multiple touchpoints.',
     software: ['C4D', 'REALFLOW', 'AE'],
-    image: '/client-acme-scene-2.jpg',
+    image: '/film/vw-gen-gti-docu/scene-15.jpg',
   },
   {
     id: 7,
@@ -79,7 +79,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '4 MIN',
     description: 'Live performance visuals for an electronic music tour. Real-time generative graphics responding to MIDI triggers, projected across a 270-degree stage.',
     software: ['TOUCHDESIGNER', 'RESOLUME'],
-    image: '/client-aria-scene-2.jpg',
+    image: '/film/travel-series/scene-18.jpg',
   },
   {
     id: 8,
@@ -90,7 +90,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '75 SEC',
     description: 'End credits for a documentary about the history of accounting. Numbers and ledgers cascade in an elegant Rube Goldberg-inspired sequence.',
     software: ['AFTER EFFECTS', 'BLENDER'],
-    image: '/client-nova-scene-2.jpg',
+    image: '/film/mch-lucid-car/scene-01.jpg',
   },
   {
     id: 9,
@@ -101,7 +101,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '30 SEC',
     description: 'Motion design system for an analytics platform. Smooth data transitions, animated charts, and contextual micro-interactions that guide user attention.',
     software: ['FIGMA', 'AFTER EFFECTS'],
-    image: '/film-scene-1d.jpg',
+    image: '/film/music-travel-love-dubai/scene-01.jpg',
   },
   {
     id: 10,
@@ -112,7 +112,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '2 MIN',
     description: 'An experimental type film exploring the relationship between letterforms and musical notation. Each character dances to its own frequency.',
     software: ['AFTER EFFECTS', 'C4D'],
-    image: '/client-metro-scene-1.jpg',
+    image: '/film/vox-bad-boys-ii/scene-10.jpg',
   },
 ]
 

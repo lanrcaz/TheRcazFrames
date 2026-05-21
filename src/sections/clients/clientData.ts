@@ -49,7 +49,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Behind the Scenes', year: '2019', type: 'Promotional' },
     ],
     tags: ['FILM', 'DIRECTOR', 'COLOR GRADE', '35MM'],
-    images: ['/client-acme-scene-1.jpg', '/client-acme-scene-2.jpg'],
+    images: ['/film/mch-lucid-car/scene-01.jpg', '/film/mch-lucid-car/scene-10.jpg'],
     layout: 'A',
   },
   {
@@ -68,7 +68,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Afterburn', year: '2020', type: 'Promotional' },
     ],
     tags: ['FILM', 'DIRECTOR', 'STEADICAM', 'ACTION'],
-    images: ['/client-nova-scene-1.jpg', '/client-nova-scene-2.jpg'],
+    images: ['/film/redbull-breaking-pointe/scene-01.jpg', '/film/redbull-breaking-pointe/scene-15.jpg'],
     layout: 'B',
   },
   {
@@ -87,7 +87,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Luminescence', year: '2020', type: 'Visual Album' },
     ],
     tags: ['FILM', 'MUSIC VIDEO', 'COLOR', 'VFX'],
-    images: ['/client-aria-scene-1.jpg', '/client-aria-scene-2.jpg'],
+    images: ['/film/vox-bad-boys-ii/scene-01.jpg', '/film/vox-bad-boys-ii/scene-10.jpg'],
     layout: 'A',
   },
   {
@@ -106,7 +106,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Atelier', year: '2021', type: 'Brand Film' },
     ],
     tags: ['COMMERCIAL', 'DIRECTOR', 'PRODUCT', 'LIGHTING'],
-    images: ['/client-metro-scene-1.jpg', '/client-metro-scene-2.jpg'],
+    images: ['/film/vw-gen-gti-docu/scene-01.jpg', '/film/vw-gen-gti-docu/scene-15.jpg'],
     layout: 'B',
   },
   {
@@ -125,7 +125,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Raw', year: '2019', type: 'Documentary' },
     ],
     tags: ['DOCUMENTARY', 'DIRECTOR', 'CINEMATOGRAPHY', '16MM'],
-    images: ['/film-project-3-hero.jpg', '/film-scene-1a.jpg'],
+    images: ['/film/travel-series/scene-05.jpg', '/film/music-travel-love-dubai/scene-01.jpg'],
     layout: 'A',
   },
   {
@@ -144,7 +144,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Aurora', year: '2020', type: 'VFX Sequence' },
     ],
     tags: ['ANIMATION', 'DIRECTOR', 'VFX', 'COMPOSITING'],
-    images: ['/anim-project-1-hero.jpg', '/featured-animation.jpg'],
+    images: ['/film/vox-bad-boys-ii/scene-05.jpg', '/film/redbull-breaking-pointe/scene-08.jpg'],
     layout: 'B',
   },
 ];
