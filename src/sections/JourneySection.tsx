@@ -138,7 +138,7 @@ export default function JourneySection() {
               color: 'var(--color-text-muted)',
             }}
           >
-            &mdash; FERLAN RACAZA / THE RCAZ FRAMES
+            &mdash; FERLAN RACAZA / THE R'CAZ FRAMES
           </cite>
         </div>
       </div>

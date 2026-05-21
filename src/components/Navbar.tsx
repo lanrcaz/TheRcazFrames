@@ -54,7 +54,7 @@ export default function Navbar() {
               className="font-mono text-[0.7rem] tracking-[0.2em] uppercase"
               style={{ color: 'var(--color-text-primary)' }}
             >
-              THE RCAZ FRAMES
+              THE R'CAZ FRAMES
             </span>
             <span
               className="font-mono text-[0.55rem] tracking-[0.18em] uppercase"

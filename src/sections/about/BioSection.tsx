@@ -171,7 +171,7 @@ export default function BioSection() {
                 lineHeight: 1.4,
               }}
             >
-              FERLAN RACAZA / THE RCAZ FRAMES
+              FERLAN RACAZA / THE R'CAZ FRAMES
             </span>
           </div>
         </div>

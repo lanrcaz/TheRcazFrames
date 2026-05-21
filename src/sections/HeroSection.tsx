@@ -296,7 +296,7 @@ export default function HeroSection() {
             className="font-mono tracking-[0.12em] uppercase whitespace-nowrap"
             style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-muted)' }}
           >
-            THE RCAZ FRAMES / FILM & MOTION / DUBAI
+            THE R'CAZ FRAMES / FILM & MOTION / DUBAI
           </span>
         </div>
       </div>
