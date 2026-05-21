@@ -107,7 +107,7 @@ export default function HeroSection() {
               className="hidden md:block h-[1px] w-[60px] lg:w-[80px] shrink-0"
               style={{ backgroundColor: 'var(--color-border)' }}
             />
-            THE SILVER
+            THE R'CAZ
             <span
               className="hidden md:block h-[1px] w-[60px] lg:w-[80px] shrink-0"
               style={{ backgroundColor: 'var(--color-border)' }}
@@ -227,7 +227,7 @@ export default function HeroSection() {
               className="font-mono tracking-[0.12em] block"
               style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-muted)' }}
             >
-              STORYBOARDS TO THE SILVER SCREEN &amp; BEYOND
+              FROM CONCEPT TO FINAL FRAME &amp; BEYOND
             </span>
           </div>
         </div>
