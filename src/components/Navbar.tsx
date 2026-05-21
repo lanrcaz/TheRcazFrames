@@ -54,13 +54,13 @@ export default function Navbar() {
               className="font-mono text-[0.7rem] tracking-[0.2em] uppercase"
               style={{ color: 'var(--color-text-primary)' }}
             >
-              THE SILVER FRAME
+              THE RCAZ FRAMES
             </span>
             <span
               className="font-mono text-[0.55rem] tracking-[0.18em] uppercase"
               style={{ color: 'var(--color-text-muted)' }}
             >
-              FILM & ANIMATION
+              FILM & MOTION
             </span>
           </Link>
 

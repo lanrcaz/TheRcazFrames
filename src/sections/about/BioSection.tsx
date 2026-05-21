@@ -38,8 +38,8 @@ export default function BioSection() {
         >
           <div className="overflow-hidden rounded-[var(--border-radius-md)] group">
             <img
-              src="/about-portrait.jpg"
-              alt="Director in their workspace surrounded by monitors and storyboards"
+              src="/film/travel-series/scene-01.jpg"
+              alt="Ferlan Racaza — Senior Brand Creative based in Dubai"
               className="w-full aspect-[3/4] object-cover transition-transform duration-[600ms] group-hover:scale-[1.02]"
             />
           </div>
@@ -51,7 +51,7 @@ export default function BioSection() {
               lineHeight: 1.4,
             }}
           >
-            LOS ANGELES, CA &middot; 2024
+            DUBAI, UAE &middot; SENIOR BRAND CREATIVE
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function BioSection() {
               transitionDelay: '100ms',
             }}
           >
-            A Director Living Between Two Worlds
+            Ferlan Racaza — Film & Motion Creative
           </h2>
 
           {/* Bio Paragraphs */}
@@ -112,10 +112,10 @@ export default function BioSection() {
                 transitionDelay: '200ms',
               }}
             >
-              The Silver Frame is the creative studio of a director and animator based in Los Angeles,
-              working at the intersection of live-action filmmaking and animated storytelling. With over
-              a decade of experience spanning narrative shorts, branded content, music videos, and
-              animation, every project is an opportunity to push the boundaries of visual storytelling.
+              Senior creative with 12+ years across branded content, motion design, broadcast,
+              social-first video, concept art, and post-production. Currently based in Dubai, leading
+              visual direction from idea through delivery across commercials, brand films, social
+              campaigns, and digital storytelling at Create Production DXB.
             </p>
             <p
               className="font-body font-light leading-[1.7] tracking-[0.01em] transition-all duration-1000"
@@ -127,9 +127,10 @@ export default function BioSection() {
                 transitionDelay: '350ms',
               }}
             >
-              The approach is simple: treat every frame as a painting and every sequence as a journey.
-              Whether directing actors on set or keyframing characters in Blender, the goal remains the
-              same — to create work that resonates emotionally and endures visually.
+              The work combines hands-on craft in Adobe Creative Suite, Cinema 4D, compositing, and
+              color with AI film ecosystem design using Seedance, Kling workflows, and Higgsfield-style
+              automation systems that turn UGC inputs into ad concepts, motion assets, and
+              campaign-ready creative variants. Film is the focus — motion graphics is the foundation.
             </p>
             <p
               className="font-body font-light leading-[1.7] tracking-[0.01em] transition-all duration-1000"
@@ -141,9 +142,9 @@ export default function BioSection() {
                 transitionDelay: '500ms',
               }}
             >
-              Collaboration is at the heart of the process. Working closely with clients, cinematographers,
-              editors, and sound designers to ensure every project reaches its fullest potential — from
-              the first storyboard to the final color grade.
+              From Cebu to Dubai — built a creative career across broadcast, post-production, and
+              brand systems. Now focused on filming: TVCs, branded films, social content, and
+              AI-powered creative workflows. Every frame captured with intention.
             </p>
           </div>
 
@@ -160,7 +161,7 @@ export default function BioSection() {
               className="font-display"
               style={{ fontSize: '2rem', color: 'var(--color-accent-gold)' }}
             >
-              SF
+              FR
             </span>
             <span
               className="font-mono tracking-[0.2em] uppercase"
@@ -170,7 +171,7 @@ export default function BioSection() {
                 lineHeight: 1.4,
               }}
             >
-              THE SILVER FRAME
+              FERLAN RACAZA / THE RCAZ FRAMES
             </span>
           </div>
         </div>

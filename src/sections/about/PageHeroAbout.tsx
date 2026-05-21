@@ -20,7 +20,7 @@ export default function PageHeroAbout() {
       <div
         className="absolute inset-0 transition-opacity duration-[1200ms]"
         style={{
-          backgroundImage: 'url(/about-workspace.jpg)',
+          backgroundImage: 'url(/film/mch-lucid-car/scene-01.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: revealed ? 1 : 0,

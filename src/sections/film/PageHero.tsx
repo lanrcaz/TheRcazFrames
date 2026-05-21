@@ -102,7 +102,7 @@ export default function PageHero() {
         ref={bgRef}
         className="absolute inset-0 -top-[10%] -bottom-[10%]"
         style={{
-          backgroundImage: 'url(/film-project-1-hero.jpg)',
+          backgroundImage: 'url(/film/travel-series/scene-01.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           willChange: 'transform',
@@ -199,7 +199,7 @@ export default function PageHero() {
             opacity: 0,
           }}
         >
-          NARRATIVE SHORTS · BRANDED CONTENT · MUSIC VIDEOS · COMMERCIAL
+          COMMERCIAL · BRANDED CONTENT · AUTOMOTIVE · TRAVEL · DOCUMENTARY
         </p>
       </div>
     </section>

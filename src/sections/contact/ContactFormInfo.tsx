@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { Loader2, Mail, Phone, MapPin, Instagram, Linkedin, Youtube, Clock } from 'lucide-react'
+import { Loader2, Mail, Phone, MapPin, Linkedin, Youtube, Clock, Github, ExternalLink } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -462,7 +462,7 @@ export default function ContactFormInfo() {
                 lineHeight: 1.4,
               }}
             >
-              Next opening: March 2025
+              Senior Creative at Create Production DXB
             </p>
           </div>
 
@@ -487,23 +487,23 @@ export default function ContactFormInfo() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:hello@thesilverframe.studio"
+                href="mailto:ferlan.racaza@gmail.com"
                 className="flex items-center gap-3 transition-colors duration-300 hover:text-[#C9A96E] group"
                 style={{ color: 'var(--color-text-secondary)' }}
               >
                 <Mail size={16} style={{ color: 'var(--color-text-muted)' }} />
                 <span className="font-body transition-colors duration-300 group-hover:text-[#C9A96E]">
-                  hello@thesilverframe.studio
+                  ferlan.racaza@gmail.com
                 </span>
               </a>
               <a
-                href="tel:+13235550147"
+                href="tel:+971557138926"
                 className="flex items-center gap-3 transition-colors duration-300 hover:text-[#C9A96E] group"
                 style={{ color: 'var(--color-text-secondary)' }}
               >
                 <Phone size={16} style={{ color: 'var(--color-text-muted)' }} />
                 <span className="font-body transition-colors duration-300 group-hover:text-[#C9A96E]">
-                  +1 (323) 555-0147
+                  +971 557 138 926
                 </span>
               </a>
               <div
@@ -511,7 +511,7 @@ export default function ContactFormInfo() {
                 style={{ color: 'var(--color-text-secondary)' }}
               >
                 <MapPin size={16} style={{ color: 'var(--color-text-muted)' }} />
-                <span className="font-body">LOS ANGELES, CA</span>
+                <span className="font-body">DUBAI, UAE</span>
               </div>
             </div>
           </div>
@@ -537,27 +537,7 @@ export default function ContactFormInfo() {
             </p>
             <div className="flex items-center gap-5">
               <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-200 hover:text-[#C9A96E] hover:scale-[1.15]"
-                style={{ color: 'var(--color-text-muted)' }}
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="https://vimeo.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-200 hover:text-[#C9A96E] hover:scale-[1.15]"
-                style={{ color: 'var(--color-text-muted)' }}
-                aria-label="Vimeo"
-              >
-                <VimeoIcon />
-              </a>
-              <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/ferlanracaza"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-all duration-200 hover:text-[#C9A96E] hover:scale-[1.15]"
@@ -565,6 +545,26 @@ export default function ContactFormInfo() {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
+              </a>
+              <a
+                href="https://github.com/lanrcaz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-all duration-200 hover:text-[#C9A96E] hover:scale-[1.15]"
+                style={{ color: 'var(--color-text-muted)' }}
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              <a
+                href="https://ferlanportfolio.my.canva.site/ferlanmotionworks"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-all duration-200 hover:text-[#C9A96E] hover:scale-[1.15]"
+                style={{ color: 'var(--color-text-muted)' }}
+                aria-label="Portfolio"
+              >
+                <ExternalLink size={20} />
               </a>
               <a
                 href="https://youtube.com"
@@ -597,7 +597,7 @@ export default function ContactFormInfo() {
                 lineHeight: 1.4,
               }}
             >
-              Usually respond within 24–48 hours
+              Based in Dubai — GMT+4. Usually respond within 24 hours.
             </span>
           </div>
         </div>

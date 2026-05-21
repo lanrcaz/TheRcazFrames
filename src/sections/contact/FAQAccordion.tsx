@@ -16,7 +16,7 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Do you work with international clients?',
     answer:
-      'Absolutely. While based in Los Angeles, I regularly collaborate with clients across North America, Europe, and Asia. Remote directing, virtual production reviews, and cloud-based workflows make distance a non-issue.',
+      'Absolutely. While based in Dubai, I regularly collaborate with clients across the Middle East, Asia, Europe, and beyond. Remote directing, virtual production reviews, and cloud-based workflows make distance a non-issue.',
   },
   {
     question: 'What is your approach to the creative process?',

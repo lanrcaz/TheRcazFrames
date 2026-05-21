@@ -167,7 +167,7 @@ export const allClients: ClientListItem[] = [
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'The Silver Frame brought a level of visual storytelling we hadn\'t experienced before. Every frame was considered, every cut intentional.',
+      'Ferlan brought a level of visual storytelling and craft we hadn\'t experienced before. Every frame was considered, every cut intentional. A true creative partner.',
     name: 'SARAH CHEN',
     title: 'Creative Director, ACME STUDIOS',
   },

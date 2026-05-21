@@ -9,17 +9,17 @@ const NAV_LINKS = [
 ]
 
 const DISCIPLINE_LINKS = [
-  'Film Directing',
-  'Animation',
-  'Motion Design',
-  'Visual Effects',
+  'Film Direction',
+  'Motion Graphics',
+  'Brand Systems',
+  'AI Film Ecosystems',
 ]
 
 const SOCIAL_LINKS = [
-  { label: 'Instagram', href: '#' },
-  { label: 'Vimeo', href: '#' },
-  { label: 'LinkedIn', href: '#' },
-  { label: 'Email', href: 'mailto:hello@thesilverframe.com' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/ferlanracaza' },
+  { label: 'Portfolio', href: 'https://ferlanportfolio.my.canva.site/ferlanmotionworks' },
+  { label: 'GitHub', href: 'https://github.com/lanrcaz' },
+  { label: 'Email', href: 'mailto:ferlan.racaza@gmail.com' },
 ]
 
 export default function Footer() {
@@ -37,15 +37,15 @@ export default function Footer() {
         {/* Left: Brand */}
         <div>
           <h3 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)' }}>
-            THE SILVER
+            THE RCAZ
             <br />
-            FRAME
+            FRAMES
           </h3>
           <p
             className="font-mono text-[0.65rem] tracking-[0.2em] uppercase mt-2"
             style={{ color: 'var(--color-text-muted)' }}
           >
-            FILM & ANIMATION
+            FILM & MOTION — DUBAI, UAE
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export default function Footer() {
           className="font-display italic text-center py-8 text-base md:text-lg"
           style={{ color: 'var(--color-text-muted)' }}
         >
-          &ldquo;Every frame is a painting. Every cut is a heartbeat.&rdquo;
+          &ldquo;Senior creative with 12+ years across branded content, motion design, broadcast, and social-first video. Based in Dubai, UAE.&rdquo;
         </p>
       </div>
 
@@ -138,7 +138,7 @@ export default function Footer() {
           className="font-mono text-[clamp(0.65rem,0.8vw,0.75rem)] tracking-[0.12em]"
           style={{ color: 'var(--color-text-tertiary)' }}
         >
-          &copy; 2025 THE SILVER FRAME. ALL RIGHTS RESERVED.
+          &copy; 2025 FERLAN RACAZA / THE RCAZ FRAMES. ALL RIGHTS RESERVED.
         </p>
         <button
           onClick={scrollToTop}

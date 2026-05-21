@@ -13,22 +13,22 @@ const CARDS: PhilosophyCard[] = [
   {
     icon: <Eye size={28} />,
     iconColor: 'var(--color-accent-gold)',
-    title: 'Visual Storytelling',
-    body: 'Every frame must advance the story. Composition, color, and movement are not decorative — they are narrative tools. The audience should feel the story before they understand it.',
+    title: 'Film-First Direction',
+    body: 'The camera is the primary storytelling tool. Every frame is composed with intention — from Burj Khalifa aerials to intimate close-ups. Film captures what no other medium can: presence, light, and the human moment.',
     number: '01',
   },
   {
     icon: <Heart size={28} />,
     iconColor: 'var(--color-accent-rose)',
-    title: 'Emotional Truth',
-    body: 'Whether working with actors or animated characters, the pursuit is the same: authenticity. The camera sees through pretense. Animation reveals what live-action cannot. Both demand honesty.',
+    title: 'Motion as Foundation',
+    body: '12+ years in motion design, broadcast, and post-production built the visual grammar that now informs every film project. After Effects, Cinema 4D, and compositing are not separate disciplines — they are extensions of the same eye.',
     number: '02',
   },
   {
     icon: <Gem size={28} />,
     iconColor: 'var(--color-accent-copper)',
-    title: 'Craft & Detail',
-    body: 'Excellence lives in the details most viewers will never consciously notice — the quality of a shadow, the timing of a blink, the color of ambient light. These invisible details make the work feel alive.',
+    title: 'Creative Systems & AI',
+    body: 'Architecting AI film ecosystems using Seedance, Kling workflows, and Higgsfield-style automation to transform UGC inputs into campaign-ready creative variants. The future of production is intelligent, fast, and craft-led.',
     number: '03',
   },
 ]
