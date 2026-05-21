@@ -14,25 +14,36 @@ const LUCID_FRAMES = Array.from({ length: 20 }, (_, i) => ({
   index: i + 1,
 }))
 
-const REDBULL_FRAMES = Array.from({ length: 24 }, (_, i) => ({
-  src: `/film/redbull-breaking-pointe/scene-${String(i + 1).padStart(2, '0')}.jpg`,
-  index: i + 1,
-}))
+// Red Bull Breaking Pointe — remove frame 19 (1-18, 20-24 = 23 frames)
+const REDBULL_FRAMES = [
+  ...Array.from({ length: 18 }, (_, i) => ({ src: `/film/redbull-breaking-pointe/scene-${String(i + 1).padStart(2, '0')}.jpg`, index: i + 1 })),
+  ...Array.from({ length: 5 }, (_, i) => ({ src: `/film/redbull-breaking-pointe/scene-${String(i + 20).padStart(2, '0')}.jpg`, index: i + 20 })),
+]
 
-const MUSIC_LOVE_FRAMES = Array.from({ length: 16 }, (_, i) => ({
-  src: `/film/music-travel-love-dubai/scene-${String(i + 1).padStart(2, '0')}.jpg`,
-  index: i + 1,
-}))
+// Music Travel Love Dubai — swap 13 and 16 (1-12, 16, 14, 15, 13)
+const MUSIC_LOVE_FRAMES = [
+  ...Array.from({ length: 12 }, (_, i) => ({ src: `/film/music-travel-love-dubai/scene-${String(i + 1).padStart(2, '0')}.jpg`, index: i + 1 })),
+  { src: '/film/music-travel-love-dubai/scene-16.jpg', index: 16 },
+  { src: '/film/music-travel-love-dubai/scene-14.jpg', index: 14 },
+  { src: '/film/music-travel-love-dubai/scene-15.jpg', index: 15 },
+  { src: '/film/music-travel-love-dubai/scene-13.jpg', index: 13 },
+]
 
-const BADBOYS_FRAMES = Array.from({ length: 19 }, (_, i) => ({
-  src: `/film/vox-bad-boys-ii/scene-${String(i + 1).padStart(2, '0')}.jpg`,
-  index: i + 1,
-}))
+// Bad Boys II — last 3 are 19, 18, 17 (1-16, 19, 18, 17)
+const BADBOYS_FRAMES = [
+  ...Array.from({ length: 16 }, (_, i) => ({ src: `/film/vox-bad-boys-ii/scene-${String(i + 1).padStart(2, '0')}.jpg`, index: i + 1 })),
+  { src: '/film/vox-bad-boys-ii/scene-19.jpg', index: 19 },
+  { src: '/film/vox-bad-boys-ii/scene-18.jpg', index: 18 },
+  { src: '/film/vox-bad-boys-ii/scene-17.jpg', index: 17 },
+]
 
-const VW_FRAMES = Array.from({ length: 24 }, (_, i) => ({
-  src: `/film/vw-gen-gti-docu/scene-${String(i + 1).padStart(2, '0')}.jpg`,
-  index: i + 1,
-}))
+// VW Gen GTI — last 3 are 23, 24, 22 (1-21, 23, 24, 22)
+const VW_FRAMES = [
+  ...Array.from({ length: 21 }, (_, i) => ({ src: `/film/vw-gen-gti-docu/scene-${String(i + 1).padStart(2, '0')}.jpg`, index: i + 1 })),
+  { src: '/film/vw-gen-gti-docu/scene-23.jpg', index: 23 },
+  { src: '/film/vw-gen-gti-docu/scene-24.jpg', index: 24 },
+  { src: '/film/vw-gen-gti-docu/scene-22.jpg', index: 22 },
+]
 
 // ALL 6 projects — index matches PROJECTS array order
 const PROJECT_FRAMES = [
