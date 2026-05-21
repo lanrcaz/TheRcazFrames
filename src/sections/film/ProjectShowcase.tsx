@@ -166,10 +166,10 @@ export default function ProjectShowcase({ project, frames, romanNumeral }: Proje
             </div>
           </div>
 
-          {/* Frames Grid — ALL scenes */}
+          {/* Frames Grid — ALL scenes in numbered sequence */}
           <div
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-            style={{ gap: '0.5rem' }}
+            style={{ gap: '0.5rem', gridAutoFlow: 'row' }}
           >
             {frames.map((frame, i) => (
               <div
@@ -191,6 +191,18 @@ export default function ProjectShowcase({ project, frames, romanNumeral }: Proje
                     className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                     loading="lazy"
                   />
+                  {/* Frame number — ALWAYS visible */}
+                  <div
+                    className="absolute top-2 left-2 font-mono tracking-[0.15em] px-2 py-1"
+                    style={{
+                      fontSize: '0.6rem',
+                      color: '#F5F0EB',
+                      backgroundColor: 'rgba(10,10,10,0.7)',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    {String(frame.index).padStart(2, '0')}
+                  </div>
                   {/* Hover overlay */}
                   <div
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -200,7 +212,7 @@ export default function ProjectShowcase({ project, frames, romanNumeral }: Proje
                       className="font-mono tracking-[0.2em] uppercase"
                       style={{ fontSize: '0.6rem', color: '#F5F0EB' }}
                     >
-                      FRAME {String(frame.index).padStart(2, '0')}
+                      VIEW
                     </span>
                   </div>
                 </div>
