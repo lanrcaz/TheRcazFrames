@@ -151,7 +151,7 @@ export default function PageHero() {
             opacity: 0,
           }}
         >
-          FILM PORTFOLIO
+          SELECTED WORKS
         </span>
 
         {/* Title with decorative lines */}
@@ -173,10 +173,13 @@ export default function PageHero() {
             }}
           >
             <span className="word inline-block" style={{ opacity: 0 }}>
-              DIRECTED
+              FILM
             </span>{' '}
             <span className="word inline-block" style={{ opacity: 0 }}>
-              WORKS
+              &amp;
+            </span>{' '}
+            <span className="word inline-block" style={{ opacity: 0 }}>
+              COMMERCIAL
             </span>
           </h1>
           <span
@@ -199,7 +202,7 @@ export default function PageHero() {
             opacity: 0,
           }}
         >
-          COMMERCIAL · BRANDED CONTENT · AUTOMOTIVE · TRAVEL · DOCUMENTARY
+          AUTOMOTIVE · TRAVEL · BRANDED · DOCUMENTARY · ACTION
         </p>
       </div>
     </section>
