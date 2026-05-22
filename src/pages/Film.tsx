@@ -67,7 +67,7 @@ export default function Film() {
             SELECTED WORKS
           </span>
           <h2 className="font-display font-light leading-[1.05] tracking-[-0.01em]" style={{ fontSize: 'clamp(2rem,4vw,3.5rem)', color: 'var(--color-text-primary)' }}>
-            DIRECTED WORKS
+            COLLABORATED WORKS
           </h2>
           <p className="font-body font-light mt-3 max-w-[500px]" style={{ fontSize: 'clamp(0.9375rem,1.1vw,1.0625rem)', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
             Six film projects spanning commercial, branded content, and documentary work — 128 frames, each captured with intention.
