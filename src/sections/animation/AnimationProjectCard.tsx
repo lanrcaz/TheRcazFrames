@@ -11,14 +11,16 @@ export interface AnimationProject {
   description: string
   software: string[]
   image: string
+  frames?: string[]
 }
 
 interface AnimationProjectCardProps {
   project: AnimationProject
   index: number
+  onView?: (project: AnimationProject) => void
 }
 
-export default function AnimationProjectCard({ project, index }: AnimationProjectCardProps) {
+export default function AnimationProjectCard({ project, index, onView }: AnimationProjectCardProps) {
   const [hovered, setHovered] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -152,19 +154,24 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
         </div>
 
         {/* View Link */}
-        <span
-          className="inline-flex items-center gap-2 font-body font-medium uppercase transition-all duration-300 group-hover:gap-3"
+        <button
+          onClick={() => onView?.(project)}
+          className="inline-flex items-center gap-2 font-body font-medium uppercase transition-all duration-300 hover:gap-3"
           style={{
             fontSize: '0.75rem',
             letterSpacing: '0.15em',
             color: 'var(--color-accent-gold)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
           }}
         >
           VIEW
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
             <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </span>
+        </button>
       </div>
     </motion.article>
   )
