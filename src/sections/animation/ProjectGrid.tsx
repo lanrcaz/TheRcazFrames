@@ -6,14 +6,14 @@ import AnimationProjectCard, { type AnimationProject } from './AnimationProjectC
 const PROJECTS: AnimationProject[] = [
   {
     id: 1,
-    title: 'Meridian Launch',
+    title: 'HITB CyberWeek',
     category: 'Brand Film',
     categoryShort: 'BRAND',
-    year: 2024,
-    duration: '2 MIN',
-    description: 'A kinetic brand film for a fintech startup. Geometric forms morph and intersect in sync with a driving electronic score, communicating trust and innovation.',
-    software: ['C4D', 'AFTER EFFECTS'],
-    image: '/film/travel-series/scene-01.jpg',
+    year: 2019,
+    duration: '6 EPISODES',
+    description: 'Overall event display graphics and social branding across 6 days for HITB CyberWeek Singapore 2019. Designed the entire 6-episode documentary player journey covering the full conference — from opening graphics to daily episode transitions and closing credits.',
+    software: ['AFTER EFFECTS', 'C4D'],
+    image: '/film/hitb/scene-01.jpg',
   },
   {
     id: 2,
