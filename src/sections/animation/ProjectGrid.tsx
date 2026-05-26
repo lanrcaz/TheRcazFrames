@@ -86,6 +86,27 @@ const PROJECTS: AnimationProject[] = [
       '/film/sw-trends/scene-08.jpg',
     ],
   },
+  {
+    id: 12,
+    title: 'VXV — Artist Collective',
+    category: 'Mixed Media',
+    categoryShort: 'MIXED',
+    year: 2020,
+    duration: '2 MIN',
+    description: 'A promotional motion design piece for VXV, an artist collective bridging emerging talent, working professionals, and dedicated hobbyists across multiple creative disciplines. As Art Director and Senior Motion Designer, the challenge was to create a single visual language that honoured each artist\'s unique forte — from painters and sculptors to digital illustrators and mixed-media experimentalists — without fragmenting the brand. The solution: a dynamic modular system where each artist segment shares a common kinetic rhythm while shifting colour palettes, typography weights, and transition styles to reflect the individual medium. Bold shapes sweep across the frame as artist names and disciplines emerge with confident precision. The result is a piece that feels both collective and personal — a community of creators united by motion, not limited by it.',
+    software: ['AFTER EFFECTS', 'C4D'],
+    image: '/film/vxv/scene-01.jpg',
+    frames: [
+      '/film/vxv/scene-01.jpg',
+      '/film/vxv/scene-02.jpg',
+      '/film/vxv/scene-03.jpg',
+      '/film/vxv/scene-04.jpg',
+      '/film/vxv/scene-05.jpg',
+      '/film/vxv/scene-06.jpg',
+      '/film/vxv/scene-07.jpg',
+      '/film/vxv/scene-08.jpg',
+    ],
+  },
 ]
 
 export default function ProjectGrid() {
