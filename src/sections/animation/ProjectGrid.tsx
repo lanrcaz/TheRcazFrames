@@ -142,6 +142,27 @@ const PROJECTS: AnimationProject[] = [
     software: ['AFTER EFFECTS', 'C4D'],
     image: '/film/vox-bad-boys-ii/scene-10.jpg',
   },
+  {
+    id: 11,
+    title: 'Swimwear Trends — TVC',
+    category: 'Brand Film',
+    categoryShort: 'BRAND',
+    year: 2019,
+    duration: '30 SEC',
+    description: 'A series of TVC ads for Swimwear Trends exploring the intersection of fashion and architectural form. As Art Director and Senior Motion Designer, the visual language was built entirely in a 3D Art Deco style — sharp geometric silhouettes, stepped forms, and radiating sunburst patterns rendered in Cinema 4D. The approach treated each swimsuit as a sculptural object: bold contours against minimal backgrounds, metallic accents catching virtual light, and a restrained palette of cream, gold, and deep ocean teal. Every frame channels the optimism and precision of Art Deco while keeping the focus squarely on the cut, drape, and presence of each piece. The result is a campaign that feels less like advertising and more like moving editorial — fashion as monument.',
+    software: ['CINEMA 4D', 'AFTER EFFECTS'],
+    image: '/film/sw-trends/scene-01.jpg',
+    frames: [
+      '/film/sw-trends/scene-01.jpg',
+      '/film/sw-trends/scene-02.jpg',
+      '/film/sw-trends/scene-03.jpg',
+      '/film/sw-trends/scene-04.jpg',
+      '/film/sw-trends/scene-05.jpg',
+      '/film/sw-trends/scene-06.jpg',
+      '/film/sw-trends/scene-07.jpg',
+      '/film/sw-trends/scene-08.jpg',
+    ],
+  },
 ]
 
 export default function ProjectGrid() {
