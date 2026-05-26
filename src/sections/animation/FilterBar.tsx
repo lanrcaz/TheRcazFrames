@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
-export type FilterCategory = 'ALL' | 'BRAND FILM' | 'TITLE SEQUENCE' | 'KINETIC TYPE' | 'UI MOTION' | 'DATA VIZ' | 'MIXED MEDIA'
+export type FilterCategory = 'ALL' | 'BRAND FILM' | 'MIXED MEDIA'
 
 interface FilterBarProps {
   activeFilter: FilterCategory
@@ -12,10 +12,6 @@ interface FilterBarProps {
 const FILTERS: FilterCategory[] = [
   'ALL',
   'BRAND FILM',
-  'TITLE SEQUENCE',
-  'KINETIC TYPE',
-  'UI MOTION',
-  'DATA VIZ',
   'MIXED MEDIA',
 ]
 

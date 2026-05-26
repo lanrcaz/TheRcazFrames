@@ -66,83 +66,6 @@ const PROJECTS: AnimationProject[] = [
     ],
   },
   {
-    id: 4,
-    title: 'Echo Interface',
-    category: 'UI Motion',
-    categoryShort: 'UI',
-    year: 2023,
-    duration: '45 SEC',
-    description: 'Motion language for a music streaming app redesign. Micro-interactions, transitions, and ambient visualizers that respond to audio frequency in real-time.',
-    software: ['FIGMA', 'AFTER EFFECTS'],
-    image: '/film/music-travel-love-dubai/scene-08.jpg',
-  },
-  {
-    id: 5,
-    title: 'Kinetic Manifesto',
-    category: 'Kinetic Type',
-    categoryShort: 'TYPE',
-    year: 2023,
-    duration: '60 SEC',
-    description: 'A typographic manifesto film for a creative agency. Words become architecture, collapsing and expanding in rhythm with a spoken-word voiceover.',
-    software: ['AFTER EFFECTS', 'C4D'],
-    image: '/film/redbull-breaking-pointe/scene-15.jpg',
-  },
-  {
-    id: 6,
-    title: 'Solstice Rebrand',
-    category: 'Brand Film',
-    categoryShort: 'BRAND',
-    year: 2022,
-    duration: '3 MIN',
-    description: 'Complete brand motion system for a luxury wellness brand. Fluid simulations of botanical extracts morphing into logo forms across multiple touchpoints.',
-    software: ['C4D', 'REALFLOW', 'AE'],
-    image: '/film/vw-gen-gti-docu/scene-15.jpg',
-  },
-  {
-    id: 7,
-    title: 'Frequency Live',
-    category: 'Mixed Media',
-    categoryShort: 'MIXED',
-    year: 2022,
-    duration: '4 MIN',
-    description: 'Live performance visuals for an electronic music tour. Real-time generative graphics responding to MIDI triggers, projected across a 270-degree stage.',
-    software: ['TOUCHDESIGNER', 'RESOLUME'],
-    image: '/film/travel-series/scene-18.jpg',
-  },
-  {
-    id: 8,
-    title: 'Ledger Titles',
-    category: 'Title Sequence',
-    categoryShort: 'TITLES',
-    year: 2022,
-    duration: '75 SEC',
-    description: 'End credits for a documentary about the history of accounting. Numbers and ledgers cascade in an elegant Rube Goldberg-inspired sequence.',
-    software: ['AFTER EFFECTS', 'BLENDER'],
-    image: '/film/mch-lucid-car/scene-01.jpg',
-  },
-  {
-    id: 9,
-    title: 'Prism Dashboard',
-    category: 'UI Motion',
-    categoryShort: 'UI',
-    year: 2021,
-    duration: '30 SEC',
-    description: 'Motion design system for an analytics platform. Smooth data transitions, animated charts, and contextual micro-interactions that guide user attention.',
-    software: ['FIGMA', 'AFTER EFFECTS'],
-    image: '/film/music-travel-love-dubai/scene-01.jpg',
-  },
-  {
-    id: 10,
-    title: 'Glyph Symphony',
-    category: 'Kinetic Type',
-    categoryShort: 'TYPE',
-    year: 2021,
-    duration: '2 MIN',
-    description: 'An experimental type film exploring the relationship between letterforms and musical notation. Each character dances to its own frequency.',
-    software: ['AFTER EFFECTS', 'C4D'],
-    image: '/film/vox-bad-boys-ii/scene-10.jpg',
-  },
-  {
     id: 11,
     title: 'Swimwear Trends — TVC',
     category: 'Brand Film',
@@ -187,10 +110,6 @@ export default function ProjectGrid() {
     if (activeFilter === 'ALL') return PROJECTS
     return PROJECTS.filter((p) => {
       if (activeFilter === 'BRAND FILM') return p.category === 'Brand Film'
-      if (activeFilter === 'TITLE SEQUENCE') return p.category === 'Title Sequence'
-      if (activeFilter === 'KINETIC TYPE') return p.category === 'Kinetic Type'
-      if (activeFilter === 'UI MOTION') return p.category === 'UI Motion'
-      if (activeFilter === 'DATA VIZ') return p.category === 'Data Viz'
       if (activeFilter === 'MIXED MEDIA') return p.category === 'Mixed Media'
       return true
     })
