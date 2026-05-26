@@ -108,13 +108,13 @@ export default function DisciplineSplit() {
 
         {/* Animation Column */}
         <DisciplineCard
-          bgImage="/film/redbull-breaking-pointe/scene-01.jpg"
+          bgImage="/film/ft-spec-ad/scene-07.jpg"
           icon={<Sparkles size={32} style={{ color: 'var(--color-accent-copper)' }} />}
           title="MOTION"
           subtitle="GRAPHICS & SYSTEMS"
-          description="12+ years in motion design, broadcast, and post-production. After Effects, Cinema 4D, and AI film ecosystems — the foundation that now informs every frame of film work."
+          description="5 real projects: HITB CyberWeek, Fashion Television Spec Ad, Mercedes-Benz Fashion Week Cape Town, Swimwear Trends TVC, and VXV Artist Collective. Cinema 4D Voronoi Fracture, glass reflection renders, 3D Art Deco style, and dynamic modular motion systems."
           cta="EXPLORE MOTION"
-          ctaLink="/motion"
+          ctaLink="/animation"
           revealed={revealed}
           delay={500}
           slideDir="right"

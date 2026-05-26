@@ -14,12 +14,12 @@ const FEATURED_DATA = {
     ctaLink: '/film',
   },
   motion: {
-    image: '/film/vw-gen-gti-docu/scene-01.jpg',
-    meta: '2023 \u00B7 BRANDED DOCUMENTARY \u00B7 5 MIN',
-    title: 'VW GEN GTI \u2014 DOCUMENTARY',
-    desc: 'A branded documentary exploring the legacy of the Volkswagen Golf GTI. From the original Mk1 to the latest generation \u2014 told through engineers, collectors, and drivers who live the hot hatch culture.',
+    image: '/film/hitb/scene-01.jpg',
+    meta: '2019 \u00B7 BRAND FILM \u00B7 6 EPISODES',
+    title: 'HITB CYBERWEEK \u2014 ABU DHABI',
+    desc: 'Overall event display graphics and social branding across 6 days for HITB CyberWeek Abu Dhabi 2019. Designed the entire 6-episode documentary player journey covering the full conference.',
     cta: 'VIEW PROJECT',
-    ctaLink: '/film',
+    ctaLink: '/animation',
   },
 }
 
