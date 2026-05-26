@@ -362,6 +362,7 @@ function ClientSlide({
             >
               <Link
                 to="/clients"
+                onClick={() => window.scrollTo(0, 0)}
                 className="group inline-flex items-center gap-2 font-body text-xs font-medium tracking-[0.15em] uppercase text-[#C9A96E] transition-colors duration-300 hover:text-[#D4B87A]"
               >
                 <span className="relative">

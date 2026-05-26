@@ -241,6 +241,7 @@ function BothContent() {
       <div className="mt-6 flex flex-col sm:flex-row gap-4">
         <Link
           to="/film"
+          onClick={() => window.scrollTo(0, 0)}
           className="group inline-flex items-center gap-2 font-body text-xs font-medium tracking-[0.15em] uppercase text-[#C9A96E] transition-colors duration-300 hover:text-[#D4B87A]"
         >
           <span className="relative">
@@ -250,11 +251,12 @@ function BothContent() {
           <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
         </Link>
         <Link
-          to="/motion"
+          to="/animation"
+          onClick={() => window.scrollTo(0, 0)}
           className="group inline-flex items-center gap-2 font-body text-xs font-medium tracking-[0.15em] uppercase text-[#C9A96E] transition-colors duration-300 hover:text-[#D4B87A]"
         >
           <span className="relative">
-            VIEW MOTION
+            VIEW MOTION WORK
             <span className="absolute -bottom-0.5 left-0 h-[1px] w-full bg-[#C9A96E] origin-left scale-x-100 group-hover:scale-x-100 transition-transform duration-300" />
           </span>
           <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
