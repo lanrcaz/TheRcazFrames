@@ -20,12 +20,14 @@ const PROJECT_TYPES = [
 ]
 
 const BUDGET_RANGES = [
-  'Under $10K',
-  '$10K – $25K',
-  '$25K – $50K',
-  '$50K – $100K',
-  '$100K+',
-  'Not Sure Yet',
+  '2,000 USD',
+  '3,000 USD',
+  '5,000 USD',
+  '7,000 USD',
+  '10,000 USD',
+  '15,000 USD',
+  '18,000 USD',
+  '30,000+ USD',
 ]
 
 interface FormData {
