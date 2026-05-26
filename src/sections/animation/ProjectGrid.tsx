@@ -107,6 +107,29 @@ const PROJECTS: AnimationProject[] = [
       '/film/vxv/scene-08.jpg',
     ],
   },
+  {
+    id: 13,
+    title: 'Top 10 Most Stylish Men',
+    category: 'Brand Film',
+    categoryShort: 'BRAND',
+    year: 2019,
+    duration: '3 MIN',
+    description: 'A TVC campaign counting down the top 10 most stylish men — a high-energy editorial piece built around glamour, confidence, and curated presence. As Art Director and Senior Motion Designer, each rank was treated as its own visual event: bold typographic reveals, sweeping camera motion through abstract fashion spaces, and a consistent gold-and-black palette that elevated every frame into editorial territory. The countdown structure demanded precision in pacing — each reveal builds anticipation while the motion design keeps energy climbing toward number one. Glass textures, reflective surfaces, and sharp geometric framing channel luxury fashion advertising. The result is a countdown that feels less like a list and more like a runway finale — every subject arrives with gravitas.',
+    software: ['CINEMA 4D', 'AFTER EFFECTS'],
+    image: '/film/tp10-stylish/scene-01.jpg',
+    frames: [
+      '/film/tp10-stylish/scene-01.jpg',
+      '/film/tp10-stylish/scene-02.jpg',
+      '/film/tp10-stylish/scene-03.jpg',
+      '/film/tp10-stylish/scene-04.jpg',
+      '/film/tp10-stylish/scene-05.jpg',
+      '/film/tp10-stylish/scene-06.jpg',
+      '/film/tp10-stylish/scene-07.jpg',
+      '/film/tp10-stylish/scene-08.jpg',
+      '/film/tp10-stylish/scene-09.jpg',
+      '/film/tp10-stylish/scene-10.jpg',
+    ],
+  },
 ]
 
 export default function ProjectGrid() {
