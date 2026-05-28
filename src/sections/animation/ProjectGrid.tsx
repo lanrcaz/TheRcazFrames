@@ -95,7 +95,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '2 MIN',
     description: 'A promotional motion design piece for VXV, an artist collective bridging emerging talent, working professionals, and dedicated hobbyists across multiple creative disciplines. As Art Director and Senior Motion Designer, the challenge was to create a single visual language that honoured each artist\'s unique forte — from painters and sculptors to digital illustrators and mixed-media experimentalists — without fragmenting the brand. The solution: a dynamic modular system where each artist segment shares a common kinetic rhythm while shifting colour palettes, typography weights, and transition styles to reflect the individual medium. Bold shapes sweep across the frame as artist names and disciplines emerge with confident precision. The result is a piece that feels both collective and personal — a community of creators united by motion, not limited by it.',
     software: ['AFTER EFFECTS', 'C4D'],
-    image: '/film/vxv/scene-01.jpg',
+    image: '/film/vxv/scene-08.jpg',
     frames: [
       '/film/vxv/scene-01.jpg',
       '/film/vxv/scene-02.jpg',
@@ -116,7 +116,7 @@ const PROJECTS: AnimationProject[] = [
     duration: '3 MIN',
     description: 'A TVC campaign counting down the top 10 most stylish men — a high-energy editorial piece built around glamour, confidence, and curated presence. As Art Director and Senior Motion Designer, each rank was treated as its own visual event: bold typographic reveals, sweeping camera motion through abstract fashion spaces, and a consistent gold-and-black palette that elevated every frame into editorial territory. The countdown structure demanded precision in pacing — each reveal builds anticipation while the motion design keeps energy climbing toward number one. Glass textures, reflective surfaces, and sharp geometric framing channel luxury fashion advertising. The result is a countdown that feels less like a list and more like a runway finale — every subject arrives with gravitas.',
     software: ['CINEMA 4D', 'AFTER EFFECTS'],
-    image: '/film/tp10-stylish/scene-01.jpg',
+    image: '/film/tp10-stylish/scene-07.jpg',
     frames: [
       '/film/tp10-stylish/scene-01.jpg',
       '/film/tp10-stylish/scene-02.jpg',
