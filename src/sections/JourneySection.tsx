@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect } from 'react'
 
 const STATS = [
-  { value: '10+', label: 'YEARS OF CRAFT' },
-  { value: '40+', label: 'PROJECTS COMPLETED' },
-  { value: '12', label: 'CLIENTS WORLDWIDE' },
-  { value: '8', label: 'FESTIVAL SELECTIONS' },
+  { value: '12+', label: 'YEARS OF CRAFT' },
+  { value: '3', label: 'FEATURED FILMS' },
+  { value: 'DUBAI', label: 'BASED IN UAE' },
+  { value: '2017', label: 'AT CREATE PROD DXB' },
 ]
 
 export default function JourneySection() {
@@ -138,7 +138,7 @@ export default function JourneySection() {
               color: 'var(--color-text-muted)',
             }}
           >
-            &mdash; THE SILVER FRAME
+            &mdash; FERLAN RACAZA / THE R'CAZ FRAMES
           </cite>
         </div>
       </div>

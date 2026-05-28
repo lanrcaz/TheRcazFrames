@@ -11,16 +11,26 @@ export interface AnimationProject {
   description: string
   software: string[]
   image: string
+  frames?: string[]
 }
 
 interface AnimationProjectCardProps {
   project: AnimationProject
   index: number
+  onView?: (project: AnimationProject) => void
 }
 
-export default function AnimationProjectCard({ project, index }: AnimationProjectCardProps) {
+const MAX_DESC_CHARS = 180
+
+export default function AnimationProjectCard({ project, index, onView }: AnimationProjectCardProps) {
   const [hovered, setHovered] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+
+  const isLong = project.description.length > MAX_DESC_CHARS
+  const displayText = expanded || !isLong
+    ? project.description
+    : project.description.slice(0, MAX_DESC_CHARS).trim() + '...'
 
   return (
     <motion.article
@@ -33,7 +43,7 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
         opacity: { duration: 0.5, delay: index * 0.08 },
         y: { duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
       }}
-      className="group cursor-pointer"
+      className="group"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -51,7 +61,6 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
     >
       {/* Image Area */}
       <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
-        {/* Skeleton/placeholder */}
         <div
           className="absolute inset-0 transition-opacity duration-700"
           style={{
@@ -59,7 +68,6 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
             opacity: imageLoaded ? 0 : 1,
           }}
         />
-
         <img
           src={project.image}
           alt={`${project.title} — ${project.category}`}
@@ -72,7 +80,6 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
             transition: 'opacity 700ms, transform 700ms',
           }}
         />
-
         {/* Category Pill */}
         <div
           className="absolute top-3 left-3 font-mono uppercase"
@@ -91,8 +98,30 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
         </div>
       </div>
 
+      {/* VIEW Button — right below image */}
+      <div style={{ padding: '0.75rem 1.25rem 0' }}>
+        <button
+          onClick={() => onView?.(project)}
+          className="inline-flex items-center gap-2 font-body font-medium uppercase transition-all duration-300 hover:gap-3"
+          style={{
+            fontSize: '0.75rem',
+            letterSpacing: '0.15em',
+            color: 'var(--color-accent-gold)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+          }}
+        >
+          VIEW
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
+
       {/* Content Area */}
-      <div className="p-5">
+      <div className="p-5 pt-3">
         {/* Year + Duration */}
         <span
           className="font-mono block mb-2"
@@ -118,9 +147,9 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
           {project.title}
         </h3>
 
-        {/* Description */}
+        {/* Description with READ MORE toggle */}
         <p
-          className="mb-4"
+          className="mb-2"
           style={{
             fontSize: 'clamp(0.875rem, 1vw, 1rem)',
             lineHeight: 1.7,
@@ -128,11 +157,29 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
             color: 'var(--color-text-secondary)',
           }}
         >
-          {project.description}
+          {displayText}
+          {isLong && !expanded && ' '}
         </p>
+        {isLong && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="font-mono uppercase mb-3 transition-colors hover:text-[#D4B87A]"
+            style={{
+              fontSize: '0.6rem',
+              letterSpacing: '0.18em',
+              color: 'var(--color-accent-gold)',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 0,
+            }}
+          >
+            {expanded ? '← SHOW LESS' : 'READ MORE →'}
+          </button>
+        )}
 
         {/* Software Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2">
           {project.software.map((sw) => (
             <span
               key={sw}
@@ -150,21 +197,6 @@ export default function AnimationProjectCard({ project, index }: AnimationProjec
             </span>
           ))}
         </div>
-
-        {/* View Link */}
-        <span
-          className="inline-flex items-center gap-2 font-body font-medium uppercase transition-all duration-300 group-hover:gap-3"
-          style={{
-            fontSize: '0.75rem',
-            letterSpacing: '0.15em',
-            color: 'var(--color-accent-gold)',
-          }}
-        >
-          VIEW
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
       </div>
     </motion.article>
   )

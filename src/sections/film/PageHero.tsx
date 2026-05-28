@@ -102,7 +102,7 @@ export default function PageHero() {
         ref={bgRef}
         className="absolute inset-0 -top-[10%] -bottom-[10%]"
         style={{
-          backgroundImage: 'url(/film-project-1-hero.jpg)',
+          backgroundImage: 'url(/film/travel-series/scene-01.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           willChange: 'transform',
@@ -151,7 +151,7 @@ export default function PageHero() {
             opacity: 0,
           }}
         >
-          FILM PORTFOLIO
+          SELECTED WORKS
         </span>
 
         {/* Title with decorative lines */}
@@ -173,10 +173,13 @@ export default function PageHero() {
             }}
           >
             <span className="word inline-block" style={{ opacity: 0 }}>
-              DIRECTED
+              FILM
             </span>{' '}
             <span className="word inline-block" style={{ opacity: 0 }}>
-              WORKS
+              &amp;
+            </span>{' '}
+            <span className="word inline-block" style={{ opacity: 0 }}>
+              COMMERCIAL
             </span>
           </h1>
           <span
@@ -199,7 +202,7 @@ export default function PageHero() {
             opacity: 0,
           }}
         >
-          NARRATIVE SHORTS · BRANDED CONTENT · MUSIC VIDEOS · COMMERCIAL
+          AUTOMOTIVE · TRAVEL · BRANDED · DOCUMENTARY · ACTION
         </p>
       </div>
     </section>

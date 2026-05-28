@@ -75,6 +75,7 @@ export default function CTABand() {
           {/* Circle button */}
           <Link
             to="/contact"
+            onClick={() => window.scrollTo(0, 0)}
             className="flex items-center justify-center w-[72px] h-[72px] rounded-full border transition-all duration-300 hover:border-[#C9A96E] hover:scale-105 shrink-0 mx-4"
             style={{ borderColor: 'var(--color-border)' }}
           >

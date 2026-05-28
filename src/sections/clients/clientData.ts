@@ -108,25 +108,34 @@ export const allClients: ClientListItem[] = [
   { id: 2, name: 'RED BULL', projectCount: '2', disciplines: ['Film', 'Action', 'Steadicam'] },
   { id: 3, name: 'VOX CINEMAS', projectCount: '2', disciplines: ['Commercial', 'TVC'] },
   { id: 4, name: 'VOLKSWAGEN', projectCount: '2', disciplines: ['Documentary', '16mm'] },
+  { id: 5, name: 'MUSIC TRAVEL LOVE', projectCount: '1', disciplines: ['Travel', 'Music'] },
+  { id: 6, name: 'TRAVEL SERIES', projectCount: '1', disciplines: ['Film', 'Directing'] },
+  { id: 7, name: 'HITB CYBERWEEK', projectCount: '1', disciplines: ['Motion Graphics', 'Branding'] },
+  { id: 8, name: 'FASHION TELEVISION', projectCount: '1', disciplines: ['Motion', 'Spec Ad'] },
+  { id: 9, name: 'MERCEDES-BENZ FASHION WEEK', projectCount: '1', disciplines: ['Motion', 'Fashion'] },
+  { id: 10, name: 'SWIMWEAR TRENDS', projectCount: '1', disciplines: ['Motion', 'TVC'] },
+  { id: 11, name: 'VXV ARTIST COLLECTIVE', projectCount: '1', disciplines: ['Motion', 'Branding'] },
+  { id: 12, name: 'TOP 10 MOST STYLISH MEN', projectCount: '1', disciplines: ['Motion', 'Editorial'] },
 ];
 
+// Director's notes — project reflections from Ferlan's creative perspective
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'The level of visual storytelling Ferlan brought to our Lucid Air campaign was unprecedented. Every frame was considered, every cut intentional.',
-    name: 'Ferlan Racaza',
-    title: 'Director & Cinematographer',
+      'The Lucid Air project was about restraint. Every frame had to breathe. The car\'s lines did the work \u2014 my job was to give them space. Arabic coffee culture became the bridge between heritage and innovation.',
+    name: 'FERLAN R.',
+    title: 'Director \u00B7 Lucid Motors / MCH',
   },
   {
     quote:
-      'Working with Red Bull on The Breaking Pointe felt effortless. Raw kinetic energy captured through dynamic movement and intimate athlete portraits.',
-    name: 'Ferlan Racaza',
-    title: 'Director & Cinematographer',
+      'With Red Bull, it was all about keeping up. Breakdancers don\'t wait for cameras. We shot handheld, stayed low, and chased the energy. The best moments happened when we were almost too late.',
+    name: 'FERLAN R.',
+    title: 'Director \u00B7 The Breaking Pointe',
   },
   {
     quote:
-      'The attention to detail is extraordinary. Color, composition, pacing \u2014 every element serves the story. From automotive to action to documentary.',
-    name: 'Ferlan Racaza',
-    title: 'Director & Cinematographer',
+      'Documentary work is listening. The GTI film wasn\'t about cars \u2014 it was about the people who gave decades of their lives to one idea. Their passion carried every frame.',
+    name: 'FERLAN R.',
+    title: 'Director \u00B7 Gen GTI Documentary',
   },
 ];

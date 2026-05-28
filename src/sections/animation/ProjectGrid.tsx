@@ -2,72 +2,139 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import FilterBar, { type FilterCategory } from './FilterBar'
 import AnimationProjectCard, { type AnimationProject } from './AnimationProjectCard'
+import CinematicViewer from './CinematicViewer'
 
 const PROJECTS: AnimationProject[] = [
   {
-    id: 1, title: 'Meridian Launch', category: 'Brand Film', categoryShort: 'BRAND',
-    year: 2024, duration: '2 MIN',
-    description: 'A kinetic brand film for a fintech startup. Geometric forms morph and intersect in sync with a driving electronic score, communicating trust and innovation.',
-    software: ['C4D', 'AFTER EFFECTS'], image: '/film/travel-series/scene-01.jpg',
+    id: 1,
+    title: 'HITB CyberWeek',
+    category: 'Brand Film',
+    categoryShort: 'BRAND',
+    year: 2019,
+    duration: '6 EPISODES',
+    description: 'Overall event display graphics and social branding across 6 days for HITB CyberWeek Abu Dhabi 2019. Designed the entire 6-episode documentary player journey covering the full conference — from opening graphics to daily episode transitions and closing credits.',
+    software: ['AFTER EFFECTS', 'C4D'],
+    image: '/film/hitb/scene-01.jpg',
+    frames: [
+      '/film/hitb/scene-01.jpg',
+      '/film/hitb/scene-02.jpg',
+      '/film/hitb/scene-03.jpg',
+      '/film/hitb/scene-04.jpg',
+      '/film/hitb/scene-05.jpg',
+      '/film/hitb/scene-06.jpg',
+      '/film/hitb/scene-07.jpg',
+    ],
   },
   {
-    id: 2, title: 'Nocturne Titles', category: 'Title Sequence', categoryShort: 'TITLES',
-    year: 2024, duration: '90 SEC',
-    description: 'Opening title sequence for a neo-noir streaming series. Typography emerges from shadow and smoke, letterforms dissolving and reforming in sync with the theme.',
-    software: ['AFTER EFFECTS', 'OCTANE'], image: '/film/vox-bad-boys-ii/scene-01.jpg',
+    id: 2,
+    title: 'Fashion Television — Spec Ad',
+    category: 'Mixed Media',
+    categoryShort: 'MIXED',
+    year: 2019,
+    duration: '30 SEC',
+    description: 'A spec commercial for Fashion Television exploring the tension between fragility and glamour. As Art Director and Senior Motion Designer, the concept was built around shattered glass — using Cinema 4D Voronoi Fracture to generate crystalline shards, glass reflection renders to capture prismatic light, and dual-tone texturing to create a controlled tension between surface and depth. Multiple test renders refined the approach into a sophisticated visual language anchored in just three colors and gradient shifts — restraint as the ultimate luxury.',
+    software: ['CINEMA 4D', 'AFTER EFFECTS'],
+    image: '/film/ft-spec-ad/scene-07.jpg',
+    frames: [
+      '/film/ft-spec-ad/scene-01.jpg',
+      '/film/ft-spec-ad/scene-02.jpg',
+      '/film/ft-spec-ad/scene-03.jpg',
+      '/film/ft-spec-ad/scene-04.jpg',
+      '/film/ft-spec-ad/scene-05.jpg',
+      '/film/ft-spec-ad/scene-06.jpg',
+      '/film/ft-spec-ad/scene-07.jpg',
+      '/film/ft-spec-ad/scene-08.jpg',
+    ],
   },
   {
-    id: 3, title: 'Pulse Network', category: 'Data Viz', categoryShort: 'DATA',
-    year: 2023, duration: '1 MIN',
-    description: 'Real-time data visualization for a tech conference keynote. Abstract particle streams represent global network traffic, shifting from chaos to organized flow.',
-    software: ['TOUCHDESIGNER', 'AE'], image: '/film/mch-lucid-car/scene-10.jpg',
+    id: 3,
+    title: 'Mercedes-Benz Fashion Week — Cape Town',
+    category: 'Brand Film',
+    categoryShort: 'BRAND',
+    year: 2019,
+    duration: '3 MIN',
+    description: 'A TVC highlights package for Mercedes-Benz Fashion Week Cape Town, showcasing multiple fashion designers across the event. As Art Director and Senior Motion Designer, the approach centered on high-contrast editorial framing — tight crops, deliberate negative space, and pacing that mirrors the rhythm of a runway show. Each designer segment was treated as its own visual chapter, unified through a consistent motion language of sharp cuts, elegant type reveals, and a restrained monochrome-to-color grade shift that let the collections speak first. The result is a fashion film that feels as considered as the garments it showcases.',
+    software: ['AFTER EFFECTS', 'C4D'],
+    image: '/film/mb-capetown/scene-01.jpg',
+    frames: [
+      '/film/mb-capetown/scene-01.jpg',
+      '/film/mb-capetown/scene-02.jpg',
+      '/film/mb-capetown/scene-03.jpg',
+      '/film/mb-capetown/scene-04.jpg',
+      '/film/mb-capetown/scene-05.jpg',
+      '/film/mb-capetown/scene-06.jpg',
+    ],
   },
   {
-    id: 4, title: 'Echo Interface', category: 'UI Motion', categoryShort: 'UI',
-    year: 2023, duration: '45 SEC',
-    description: 'Motion language for a music streaming app redesign. Micro-interactions, transitions, and ambient visualizers that respond to audio frequency in real-time.',
-    software: ['FIGMA', 'AFTER EFFECTS'], image: '/film/music-travel-love-dubai/scene-08.jpg',
+    id: 11,
+    title: 'Swimwear Trends — TVC',
+    category: 'Brand Film',
+    categoryShort: 'BRAND',
+    year: 2019,
+    duration: '30 SEC',
+    description: 'A series of TVC ads for Swimwear Trends exploring the intersection of fashion and architectural form. As Art Director and Senior Motion Designer, the visual language was built entirely in a 3D Art Deco style — sharp geometric silhouettes, stepped forms, and radiating sunburst patterns rendered in Cinema 4D. The approach treated each swimsuit as a sculptural object: bold contours against minimal backgrounds, metallic accents catching virtual light, and a restrained palette of cream, gold, and deep ocean teal. Every frame channels the optimism and precision of Art Deco while keeping the focus squarely on the cut, drape, and presence of each piece. The result is a campaign that feels less like advertising and more like moving editorial — fashion as monument.',
+    software: ['CINEMA 4D', 'AFTER EFFECTS'],
+    image: '/film/sw-trends/scene-01.jpg',
+    frames: [
+      '/film/sw-trends/scene-01.jpg',
+      '/film/sw-trends/scene-02.jpg',
+      '/film/sw-trends/scene-03.jpg',
+      '/film/sw-trends/scene-04.jpg',
+      '/film/sw-trends/scene-05.jpg',
+      '/film/sw-trends/scene-06.jpg',
+      '/film/sw-trends/scene-07.jpg',
+      '/film/sw-trends/scene-08.jpg',
+    ],
   },
   {
-    id: 5, title: 'Kinetic Manifesto', category: 'Kinetic Type', categoryShort: 'TYPE',
-    year: 2023, duration: '60 SEC',
-    description: 'A typographic manifesto film for a creative agency. Words become architecture, collapsing and expanding in rhythm with a spoken-word voiceover.',
-    software: ['AFTER EFFECTS', 'C4D'], image: '/film/redbull-breaking-pointe/scene-15.jpg',
+    id: 12,
+    title: 'VXV — Artist Collective',
+    category: 'Mixed Media',
+    categoryShort: 'MIXED',
+    year: 2020,
+    duration: '2 MIN',
+    description: 'A promotional motion design piece for VXV, an artist collective bridging emerging talent, working professionals, and dedicated hobbyists across multiple creative disciplines. As Art Director and Senior Motion Designer, the challenge was to create a single visual language that honoured each artist\'s unique forte — from painters and sculptors to digital illustrators and mixed-media experimentalists — without fragmenting the brand. The solution: a dynamic modular system where each artist segment shares a common kinetic rhythm while shifting colour palettes, typography weights, and transition styles to reflect the individual medium. Bold shapes sweep across the frame as artist names and disciplines emerge with confident precision. The result is a piece that feels both collective and personal — a community of creators united by motion, not limited by it.',
+    software: ['AFTER EFFECTS', 'C4D'],
+    image: '/film/vxv/scene-08.jpg',
+    frames: [
+      '/film/vxv/scene-01.jpg',
+      '/film/vxv/scene-02.jpg',
+      '/film/vxv/scene-03.jpg',
+      '/film/vxv/scene-04.jpg',
+      '/film/vxv/scene-05.jpg',
+      '/film/vxv/scene-06.jpg',
+      '/film/vxv/scene-07.jpg',
+      '/film/vxv/scene-08.jpg',
+    ],
   },
   {
-    id: 6, title: 'Solstice Rebrand', category: 'Brand Film', categoryShort: 'BRAND',
-    year: 2022, duration: '3 MIN',
-    description: 'Complete brand motion system for a luxury wellness brand. Fluid simulations of botanical extracts morphing into logo forms across multiple touchpoints.',
-    software: ['C4D', 'REALFLOW', 'AE'], image: '/film/vw-gen-gti-docu/scene-15.jpg',
-  },
-  {
-    id: 7, title: 'Frequency Live', category: 'Mixed Media', categoryShort: 'MIXED',
-    year: 2022, duration: '4 MIN',
-    description: 'Live performance visuals for an electronic music tour. Real-time generative graphics responding to MIDI triggers, projected across a 270-degree stage.',
-    software: ['TOUCHDESIGNER', 'RESOLUME'], image: '/film/travel-series/scene-18.jpg',
-  },
-  {
-    id: 8, title: 'Ledger Titles', category: 'Title Sequence', categoryShort: 'TITLES',
-    year: 2022, duration: '75 SEC',
-    description: 'End credits for a documentary about the history of accounting. Numbers and ledgers cascade in an elegant Rube Goldberg-inspired sequence.',
-    software: ['AFTER EFFECTS', 'BLENDER'], image: '/film/mch-lucid-car/scene-01.jpg',
-  },
-  {
-    id: 9, title: 'Prism Dashboard', category: 'UI Motion', categoryShort: 'UI',
-    year: 2021, duration: '30 SEC',
-    description: 'Motion design system for an analytics platform. Smooth data transitions, animated charts, and contextual micro-interactions that guide user attention.',
-    software: ['FIGMA', 'AFTER EFFECTS'], image: '/film/music-travel-love-dubai/scene-01.jpg',
-  },
-  {
-    id: 10, title: 'Glyph Symphony', category: 'Kinetic Type', categoryShort: 'TYPE',
-    year: 2021, duration: '2 MIN',
-    description: 'An experimental type film exploring the relationship between letterforms and musical notation. Each character dances to its own frequency.',
-    software: ['AFTER EFFECTS', 'C4D'], image: '/film/vox-bad-boys-ii/scene-10.jpg',
+    id: 13,
+    title: 'Top 10 Most Stylish Men',
+    category: 'Brand Film',
+    categoryShort: 'BRAND',
+    year: 2019,
+    duration: '3 MIN',
+    description: 'A TVC campaign counting down the top 10 most stylish men — a high-energy editorial piece built around glamour, confidence, and curated presence. As Art Director and Senior Motion Designer, each rank was treated as its own visual event: bold typographic reveals, sweeping camera motion through abstract fashion spaces, and a consistent gold-and-black palette that elevated every frame into editorial territory. The countdown structure demanded precision in pacing — each reveal builds anticipation while the motion design keeps energy climbing toward number one. Glass textures, reflective surfaces, and sharp geometric framing channel luxury fashion advertising. The result is a countdown that feels less like a list and more like a runway finale — every subject arrives with gravitas.',
+    software: ['CINEMA 4D', 'AFTER EFFECTS'],
+    image: '/film/tp10-stylish/scene-07.jpg',
+    frames: [
+      '/film/tp10-stylish/scene-01.jpg',
+      '/film/tp10-stylish/scene-02.jpg',
+      '/film/tp10-stylish/scene-03.jpg',
+      '/film/tp10-stylish/scene-04.jpg',
+      '/film/tp10-stylish/scene-05.jpg',
+      '/film/tp10-stylish/scene-06.jpg',
+      '/film/tp10-stylish/scene-07.jpg',
+      '/film/tp10-stylish/scene-08.jpg',
+      '/film/tp10-stylish/scene-09.jpg',
+      '/film/tp10-stylish/scene-10.jpg',
+    ],
   },
 ]
 
 export default function ProjectGrid() {
   const [activeFilter, setActiveFilter] = useState<FilterCategory>('ALL')
+  const [viewerProject, setViewerProject] = useState<AnimationProject | null>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -87,10 +154,6 @@ export default function ProjectGrid() {
     if (activeFilter === 'ALL') return PROJECTS
     return PROJECTS.filter((p) => {
       if (activeFilter === 'BRAND FILM') return p.category === 'Brand Film'
-      if (activeFilter === 'TITLE SEQUENCE') return p.category === 'Title Sequence'
-      if (activeFilter === 'KINETIC TYPE') return p.category === 'Kinetic Type'
-      if (activeFilter === 'UI MOTION') return p.category === 'UI Motion'
-      if (activeFilter === 'DATA VIZ') return p.category === 'Data Viz'
       if (activeFilter === 'MIXED MEDIA') return p.category === 'Mixed Media'
       return true
     })
@@ -127,6 +190,7 @@ export default function ProjectGrid() {
                 key={project.id}
                 project={project}
                 index={index}
+                onView={(p) => setViewerProject(p)}
               />
             ))}
           </AnimatePresence>
@@ -166,6 +230,12 @@ export default function ProjectGrid() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Cinematic Viewer */}
+      <CinematicViewer
+        project={viewerProject}
+        onClose={() => setViewerProject(null)}
+      />
 
       {/* Responsive CSS override for smaller screens */}
       <style>{`

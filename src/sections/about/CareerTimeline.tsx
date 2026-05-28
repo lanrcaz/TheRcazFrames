@@ -13,52 +13,40 @@ interface TimelineEntry {
 
 const ENTRIES: TimelineEntry[] = [
   {
-    year: '2015',
-    title: 'The First Frame',
+    year: '2008 — 2012',
+    title: 'BS Information Technology — Graphics & Animation',
     description:
-      'Graduated from film school with a thesis short that screened at three regional festivals. Bought the first camera and started shooting everything that moved.',
+      'University of San Jose-Recoletos, Philippines. Built the foundation in 3D, motion graphics, and visual storytelling. Senior 3D Concept Artist creating character and environment models in Maya and ZBrush.',
   },
   {
-    year: '2016',
-    title: 'Going Independent',
+    year: '2012',
+    title: 'Senior Concept Artist — CallOut',
     description:
-      'Left the assistant role at a commercial house to pursue directing full-time. First paying client project — a local restaurant commercial shot on weekends.',
+      'Cebu City, Philippines. Produced branding, infographics, storyboards, 3D assets, and visual communication materials for clients in Australia and Singapore.',
   },
   {
-    year: '2017',
-    title: 'Festival Circuit',
+    year: '2013 — 2017',
+    title: 'Broadcast Motion Designer — FashionOne',
     description:
-      '"Paper Boats" selected at SXSW. First taste of audiences responding to the work. Started building relationships with cinematographers and editors.',
+      'Cebu, Philippines. Delivered motion graphics, VFX, and video editing for broadcast and digital. Collaborated with international teams across Japan, Spain, and beyond.',
   },
   {
-    year: '2018',
-    title: 'The Animation Pivot',
+    year: '2017 — Present',
+    title: 'Senior Motion & Post Lead — Create Production DXB',
     description:
-      'Completed the first animated short, self-taught in Blender over six months. Realized live-action and animation could coexist in a single creative practice.',
+      'Dubai, UAE. Lead creative across TVCs, branded films, social video, and campaign assets. Oversee post-production, coach contributors, and architect AI film ecosystems using Seedance and Kling.',
   },
   {
-    year: '2019',
-    title: 'First Major Client',
+    year: '2022 — Present',
+    title: 'AI Film Systems & Creative Automation',
     description:
-      'Landed ACME STUDIOS as a retainer client. Four projects in the first year — establishing the workflow and visual signature that defines the work today.',
+      'Developed AI-powered film and ad-creation workflows. Built FilmaFlow for cinematic storyboarding. Designed 18-agent marketing systems and lead generation pipelines with creative-to-growth integration.',
   },
   {
-    year: '2021',
-    title: 'The Pandemic Projects',
+    year: '2024 — Present',
+    title: 'Filming Focus — Commercial & Branded Content',
     description:
-      'With production halted, focused entirely on animation. Created five animated shorts in 18 months — including "The Little Locksmith," which won at Ottawa.',
-  },
-  {
-    year: '2023',
-    title: 'Sundance',
-    description:
-      '"Echoes of Tide" premieres at Sundance Film Festival. A career milestone and validation of the slow, deliberate approach to building a body of work.',
-  },
-  {
-    year: '2024',
-    title: 'The Present',
-    description:
-      'Balancing film and animation projects across four continents. Teaching workshops on visual storytelling. Planning the first feature-length project.',
+      'Deep into filming: Travel Series with music producers, automotive commercials for Lucid Motors, and Red Bull documentary work. The camera is now the primary tool.',
   },
 ]
 

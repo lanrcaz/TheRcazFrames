@@ -94,11 +94,11 @@ export default function DisciplineSplit() {
 
         {/* Film Column */}
         <DisciplineCard
-          bgImage="/film-project-1-hero.jpg"
+          bgImage="/film/vox-bad-boys-ii/scene-01.jpg"
           icon={<Clapperboard size={32} style={{ color: 'var(--color-accent-gold)' }} />}
           title="FILM"
           subtitle="DIRECTING"
-          description="Narrative shorts, branded content, music videos, and commercial work. A focus on visual storytelling that moves audiences — shot on film and digital, graded with intent."
+          description="TVCs, branded content, automotive, travel docs, and documentary work. Currently deep into filming — from Burj Khalifa aerials to Dubai desert landscapes. The camera is the primary tool."
           cta="EXPLORE FILM WORK"
           ctaLink="/film"
           revealed={revealed}
@@ -108,12 +108,12 @@ export default function DisciplineSplit() {
 
         {/* Animation Column */}
         <DisciplineCard
-          bgImage="/anim-project-1-hero.jpg"
+          bgImage="/film/ft-spec-ad/scene-07.jpg"
           icon={<Sparkles size={32} style={{ color: 'var(--color-accent-copper)' }} />}
-          title="ANIMATION"
-          subtitle="MOTION & DESIGN"
-          description="3D and 2D animation, motion graphics, character design, and visual effects. From concept to final render — bringing impossible worlds to life frame by frame."
-          cta="EXPLORE ANIMATION"
+          title="MOTION"
+          subtitle="GRAPHICS & SYSTEMS"
+          description="5 real projects: HITB CyberWeek, Fashion Television Spec Ad, Mercedes-Benz Fashion Week Cape Town, Swimwear Trends TVC, and VXV Artist Collective. Cinema 4D Voronoi Fracture, glass reflection renders, 3D Art Deco style, and dynamic modular motion systems."
+          cta="EXPLORE MOTION"
           ctaLink="/animation"
           revealed={revealed}
           delay={500}
@@ -202,6 +202,7 @@ function DisciplineCard({
         </p>
         <Link
           to={ctaLink}
+          onClick={() => window.scrollTo(0, 0)}
           className="group/link inline-flex items-center gap-2 font-body text-xs font-medium tracking-[0.15em] uppercase text-[#C9A96E] transition-colors duration-300 hover:text-[#D4B87A]"
         >
           <span className="relative">
