@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     description:
       'A premium automotive commercial for Lucid Motors filmed across Abu Dhabi. Architectural cityscapes meet meticulous car cinematography — from the iconic light bar detail to Arabic coffee culture woven into the narrative.',
     image: '/film/mch-lucid-car/scene-01.jpg',
-    tags: ['AUTOMOTIVE', 'DIRECTOR', 'DP'],
+    tags: ['AUTOMOTIVE', 'DIT', 'COLOR'],
   },
   {
     id: 3,

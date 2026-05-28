@@ -112,7 +112,7 @@ export default function DisciplineSplit() {
           icon={<Sparkles size={32} style={{ color: 'var(--color-accent-copper)' }} />}
           title="MOTION"
           subtitle="GRAPHICS & SYSTEMS"
-          description="5 real projects: HITB CyberWeek, Fashion Television Spec Ad, Mercedes-Benz Fashion Week Cape Town, Swimwear Trends TVC, and VXV Artist Collective. Cinema 4D Voronoi Fracture, glass reflection renders, 3D Art Deco style, and dynamic modular motion systems."
+          description="6 motion projects: HITB CyberWeek, Fashion Television Spec Ad, Mercedes-Benz Fashion Week Cape Town, Swimwear Trends TVC, VXV Artist Collective, and Top 10 Most Stylish Men. Cinema 4D Voronoi Fracture, glass reflection renders, 3D Art Deco style, dynamic modular motion systems, and high-energy editorial countdowns."
           cta="EXPLORE MOTION"
           ctaLink="/animation"
           revealed={revealed}

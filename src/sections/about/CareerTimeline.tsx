@@ -171,8 +171,7 @@ export default function CareerTimeline() {
             transitionDelay: '200ms',
           }}
         >
-          From first short film to international festival selections — the milestones that shaped the
-          craft.
+          From Cebu to Dubai — the milestones that built a creative career across broadcast, film, and motion design.
         </p>
         <div className="flex justify-center mt-6">
           <span

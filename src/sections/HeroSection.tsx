@@ -155,7 +155,7 @@ export default function HeroSection() {
             className="font-mono tracking-[0.12em]"
             style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-tertiary)' }}
           >
-            EST. 2015
+            EST. 2008
           </span>
           <span
             className="w-1 h-1 rounded-full"
@@ -165,7 +165,7 @@ export default function HeroSection() {
             className="font-mono tracking-[0.12em]"
             style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-tertiary)' }}
           >
-            LOS ANGELES
+            DUBAI, UAE
           </span>
           <span
             className="w-1 h-1 rounded-full"

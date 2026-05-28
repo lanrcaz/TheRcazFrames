@@ -46,7 +46,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Lucid Air Commercial', year: '2024', type: 'TVC' },
       { name: 'Behind the Scenes', year: '2024', type: 'Documentary' },
     ],
-    tags: ['FILM', 'DIRECTOR', 'COLOR GRADE', '35MM'],
+    tags: ['FILM', 'DIT', 'COLOR GRADE', '35MM'],
     images: ['/film/mch-lucid-car/scene-01.jpg', '/film/mch-lucid-car/scene-10.jpg'],
     layout: 'A',
   },
