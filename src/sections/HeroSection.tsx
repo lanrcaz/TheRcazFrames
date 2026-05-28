@@ -50,8 +50,8 @@ export default function HeroSection() {
         }}
       >
         <img
-          src="/hero-bg.jpg"
-          alt="Cinematic film set"
+          src="/film/travel-series/scene-01.jpg"
+          alt="Dubai travel series — Burj Khalifa aerial"
           className="w-full h-full object-cover"
         />
       </div>
