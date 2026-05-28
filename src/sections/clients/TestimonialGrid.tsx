@@ -89,7 +89,7 @@ export default function TestimonialGrid() {
               color: 'var(--color-text-muted)',
             }}
           >
-            KIND WORDS
+            DIRECTOR'S NOTES
           </span>
           <h2
             className="header-el font-display font-light leading-[1.05] mb-4"
@@ -99,7 +99,7 @@ export default function TestimonialGrid() {
               letterSpacing: '-0.01em',
             }}
           >
-            WHAT CLIENTS SAY
+            BEHIND THE WORK
           </h2>
           <div className="header-el">
             <span

@@ -187,7 +187,7 @@ export default function ClientCarousel() {
             className="font-mono tracking-[0.12em] mt-2"
             style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-muted)' }}
           >
-            0{activeSlide + 2} / 0{CLIENTS.length + 1}
+            0{activeSlide + 1} / 0{CLIENTS.length}
           </span>
         </div>
       </div>
@@ -201,7 +201,7 @@ export default function ClientCarousel() {
       >
         <div className="max-w-[900px] mx-auto grid grid-cols-3 gap-8">
           {[
-            { number: '40+', label: 'PROJECTS' },
+            { number: '12+', label: 'PROJECTS' },
             { number: '12', label: 'CLIENTS' },
             { number: '10', label: 'YEARS' },
           ].map((stat, i) => (
