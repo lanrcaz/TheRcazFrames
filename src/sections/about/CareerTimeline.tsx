@@ -37,16 +37,16 @@ const ENTRIES: TimelineEntry[] = [
       'Dubai, UAE. Lead creative across TVCs, branded films, social video, and campaign assets. Oversee post-production, coach contributors, and architect AI film ecosystems using Seedance and Kling.',
   },
   {
-    year: '2022 — Present',
-    title: 'AI Film Systems & Creative Automation',
-    description:
-      'Developed AI-powered film and ad-creation workflows. Built FilmaFlow for cinematic storyboarding. Designed 18-agent marketing systems and lead generation pipelines with creative-to-growth integration.',
-  },
-  {
     year: '2024 — Present',
     title: 'Filming Focus — Commercial & Branded Content',
     description:
       'Deep into filming: Travel Series with music producers, automotive commercials for Lucid Motors, and Red Bull documentary work. The camera is now the primary tool.',
+  },
+  {
+    year: '2025 — Present',
+    title: 'AI Film Systems & Creative Automation',
+    description:
+      'Developed AI-powered film and ad-creation workflows. Built FilmaFlow for cinematic storyboarding. Designed 18-agent marketing systems and lead generation pipelines with creative-to-growth integration.',
   },
 ]
 
@@ -171,8 +171,7 @@ export default function CareerTimeline() {
             transitionDelay: '200ms',
           }}
         >
-          From first short film to international festival selections — the milestones that shaped the
-          craft.
+          From Cebu to Dubai — the milestones that built a creative career across broadcast, film, and motion design.
         </p>
         <div className="flex justify-center mt-6">
           <span

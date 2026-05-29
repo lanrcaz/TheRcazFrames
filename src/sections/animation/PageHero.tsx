@@ -85,7 +85,7 @@ export default function PageHero() {
             HOME
           </Link>
           {' / '}
-          <span style={{ color: 'var(--color-text-muted)' }}>MOTION</span>
+          <span style={{ color: 'var(--color-text-muted)' }}>ANIMATION</span>
         </div>
 
         {/* Label */}
@@ -156,7 +156,7 @@ export default function PageHero() {
             transitionDelay: '700ms',
           }}
         >
-          BRAND FILM · TITLE SEQUENCE · KINETIC TYPE · UI MOTION · DATA VIZ
+          BRAND FILM · SPEC AD · FASHION TVC · MOTION SYSTEMS · 3D RENDERS
         </span>
       </div>
     </section>
