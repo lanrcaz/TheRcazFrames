@@ -153,7 +153,7 @@ export default function ClientList() {
                       color: 'var(--color-text-tertiary)',
                     }}
                   >
-                    {client.projectCount} projects
+                    {client.projectCount} {client.projectCount === '1' ? 'project' : 'projects'}
                   </span>
                 </div>
 

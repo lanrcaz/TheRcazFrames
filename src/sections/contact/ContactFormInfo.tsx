@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { Loader2, Mail, Phone, MapPin, Linkedin, Youtube, Clock, Github, ExternalLink } from 'lucide-react'
+import { Loader2, Mail, Phone, MapPin, Linkedin, Clock, Github, ExternalLink } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -568,16 +568,6 @@ export default function ContactFormInfo() {
               >
                 <ExternalLink size={20} />
               </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-200 hover:text-[#C9A96E] hover:scale-[1.15]"
-                style={{ color: 'var(--color-text-muted)' }}
-                aria-label="YouTube"
-              >
-                <Youtube size={20} />
-              </a>
             </div>
           </div>
 
@@ -599,7 +589,7 @@ export default function ContactFormInfo() {
                 lineHeight: 1.4,
               }}
             >
-              Based in Dubai — GMT+4. Usually respond within 24 hours.
+              Based in Dubai — GMT+4. I usually respond within 24 hours.
             </span>
           </div>
         </div>

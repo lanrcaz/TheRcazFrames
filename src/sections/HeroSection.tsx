@@ -123,7 +123,7 @@ export default function HeroSection() {
               transition: 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s',
             }}
           >
-            FRAME
+            FRAMES
           </h1>
         </div>
 
@@ -140,7 +140,7 @@ export default function HeroSection() {
             transform: phase >= 3 ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          A Curated Journey Through Cinematic Storytelling &amp; Animated Worlds
+          Film Is the Focus. Motion Is the Foundation. Twelve Years, Two Disciplines, One Frame at a Time.
         </p>
 
         {/* Meta Strip */}
@@ -221,7 +221,7 @@ export default function HeroSection() {
               className="font-mono tracking-[0.12em] block mb-2"
               style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-tertiary)' }}
             >
-              2015 — PRESENT
+              2008 — PRESENT
             </span>
             <span
               className="font-mono tracking-[0.12em] block"

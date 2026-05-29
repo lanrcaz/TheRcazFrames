@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
     description:
       'A cinematic travel series following a music producer through Dubai — from the soaring heights of the Burj Khalifa to yacht moments at golden hour. Capturing the intersection of culture, luxury, and sound.',
     image: '/film/travel-series/scene-01.jpg',
-    tags: ['TRAVEL', 'DIRECTOR', 'COLORIST'],
+    tags: ['TRAVEL', 'DIRECTOR', 'COLOR'],
   },
   {
     id: 2,
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
     duration: '30 SEC',
     client: 'VOX Cinemas',
     description:
-      'A high-octane commercial campaign for the theatrical release of Bad Boys II. Explosive action sequences, dramatic car chases, and the electric energy of Will Smith and Martin Lawrence — all channeled into a 30-second adrenaline rush.',
+      'A high-octane VOX Cinemas promotional campaign for the theatrical run of Bad Boys II. Explosive action sequences, dramatic car chases, and the electric energy of Will Smith and Martin Lawrence — all channeled into a 30-second adrenaline rush.',
     image: '/film/vox-bad-boys-ii/scene-01.jpg',
     tags: ['CINEMA', 'DIRECTOR', 'ACTION'],
   },
