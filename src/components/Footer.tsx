@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: 'Animation', path: '/animation' },
   { label: 'Clients', path: '/clients' },
   { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
 ]
 
 const DISCIPLINE_LINKS = [

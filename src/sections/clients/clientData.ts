@@ -123,19 +123,19 @@ export const testimonials: Testimonial[] = [
   {
     quote:
       'The Lucid Air project was about restraint. Every frame had to breathe. The car\'s lines did the work \u2014 my job was to give them space. Arabic coffee culture became the bridge between heritage and innovation.',
-    name: 'FERLAN R.',
-    title: 'Director \u00B7 Lucid Motors / MCH',
+    name: 'FERLAN RACAZA',
+    title: 'Director — Lucid Motors / MCH',
   },
   {
     quote:
       'With Red Bull, it was all about keeping up. Breakdancers don\'t wait for cameras. We shot handheld, stayed low, and chased the energy. The best moments happened when we were almost too late.',
-    name: 'FERLAN R.',
-    title: 'Director \u00B7 The Breaking Pointe',
+    name: 'FERLAN RACAZA',
+    title: 'Director — The Breaking Pointe',
   },
   {
     quote:
       'Documentary work is listening. The GTI film wasn\'t about cars \u2014 it was about the people who gave decades of their lives to one idea. Their passion carried every frame.',
-    name: 'FERLAN R.',
-    title: 'Director \u00B7 Gen GTI Documentary',
+    name: 'FERLAN RACAZA',
+    title: 'Director — Gen GTI Documentary',
   },
 ];

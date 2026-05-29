@@ -39,7 +39,7 @@ export default function BioSection() {
           <div className="overflow-hidden rounded-[var(--border-radius-md)] group">
             <img
               src="/film/travel-series/scene-01.jpg"
-              alt="Ferlan Racaza — Senior Brand Creative based in Dubai"
+              alt="Ferlan Racaza — Senior Creative, Create Production DXB"
               className="w-full aspect-[3/4] object-cover transition-transform duration-[600ms] group-hover:scale-[1.02]"
             />
           </div>
@@ -51,7 +51,7 @@ export default function BioSection() {
               lineHeight: 1.4,
             }}
           >
-            DUBAI, UAE &middot; SENIOR BRAND CREATIVE
+            SENIOR CREATIVE &middot; CREATE PRODUCTION DXB
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function BioSection() {
               transitionDelay: '100ms',
             }}
           >
-            Ferlan Racaza — Film & Motion Creative
+            Ferlan Racaza — Senior Creative, Create Production DXB
           </h2>
 
           {/* Bio Paragraphs */}
