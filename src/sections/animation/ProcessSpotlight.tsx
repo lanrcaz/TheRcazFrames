@@ -262,8 +262,8 @@ export default function ProcessSpotlight() {
           <div className="lg:w-[55%] space-y-3">
             {/* Large feature image */}
             <ImageReveal
-              src="/film/redbull-breaking-pointe/scene-01.jpg"
-              alt="The mechanical city at dusk — 3D animation render showcasing a fantastical steampunk metropolis"
+              src="/animation/process/mb-capetown.jpg"
+              alt="Mercedes-Benz Fashion Week Cape Town — 3D motion graphics and kinetic typography showcase"
               delay={0}
               aspectRatio="16/10"
             />
@@ -271,15 +271,15 @@ export default function ProcessSpotlight() {
             {/* Two smaller images side by side */}
             <div className="flex gap-3">
               <ImageReveal
-                src="/film/music-travel-love-dubai/scene-05.jpg"
-                alt="Stylized urban rooftop scene at twilight — 2D animation frame"
+                src="/animation/process/ft-spec-ad.jpg"
+                alt="Fashion Television Spec Ad — Cinema 4D Voronoi Fracture and glass reflection renders"
                 delay={200}
                 aspectRatio="16/10"
                 className="flex-1"
               />
               <ImageReveal
-                src="/film/vw-gen-gti-docu/scene-10.jpg"
-                alt="Abstract flowing ribbons of light — motion graphics still frame"
+                src="/animation/process/top10-stylish.jpg"
+                alt="Top 10 Most Stylish Men — high-energy editorial countdown with gold-and-black motion design"
                 delay={350}
                 aspectRatio="16/10"
                 className="flex-1"
