@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import PageHero from '../sections/film/PageHero'
 import ProjectShowcase from '../sections/film/ProjectShowcase'
 import CTABand from '../sections/CTABand'
@@ -45,18 +47,47 @@ const VW_FRAMES = [
   { src: '/film/vw-gen-gti-docu/scene-22.jpg', index: 22 },
 ]
 
-// ALL 6 projects — index matches PROJECTS array order
+// PROJECT_FRAMES — MUST match PROJECTS array order in filmData.ts:
+// 0: VOX Bad Boys II, 1: MCH Lucid, 2: Red Bull, 3: VW, 4: Music Travel Love, 5: Travel Series
 const PROJECT_FRAMES = [
-  TRAVEL_FRAMES,      // 0 - Travel Series (25 frames)
-  LUCID_FRAMES,       // 1 - MCH Lucid (20 frames)
-  REDBULL_FRAMES,     // 2 - Red Bull Breaking Pointe (24 frames)
-  MUSIC_LOVE_FRAMES,  // 3 - Music Travel Love Dubai (16 frames)
-  BADBOYS_FRAMES,     // 4 - VOX Bad Boys II (19 frames)
-  VW_FRAMES,          // 5 - VW Gen GTI Docu (24 frames)
+  BADBOYS_FRAMES,     // 0 - VOX (19 frames)
+  LUCID_FRAMES,       // 1 - Lucid (20 frames)
+  REDBULL_FRAMES,     // 2 - Red Bull (23 frames)
+  VW_FRAMES,          // 3 - VW (24 frames)
+  MUSIC_LOVE_FRAMES,  // 4 - Music Travel Love (16 frames)
+  TRAVEL_FRAMES,      // 5 - Travel Series (25 frames)
 ]
+
 const ROMAN_NUMERALS = ['I', 'II', 'III', 'IV', 'V', 'VI']
 
+// Anchor IDs for deep-linking — index matches PROJECTS array order
+const PROJECT_ANCHORS = [
+  'project-vox-bad-boys-ii',     // 0
+  'project-mch-lucid',           // 1
+  'project-breaking-pointe',     // 2
+  'project-vw-gen-gti',          // 3
+  'project-music-travel-love',   // 4
+  'project-travel-series',       // 5
+]
+
 export default function Film() {
+  const location = useLocation()
+
+  // Scroll to anchor when hash is present (e.g. /film#project-vox-bad-boys-ii)
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '')
+      const el = document.getElementById(id)
+      if (el) {
+        setTimeout(() => {
+          const navHeight = 80
+          const y = el.getBoundingClientRect().top + window.scrollY - navHeight
+          window.scrollTo({ top: y, behavior: 'smooth' })
+        }, 100)
+      }
+    }
+  }, [location])
+
   return (
     <main style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <PageHero />
@@ -83,6 +114,7 @@ export default function Film() {
           project={project}
           frames={PROJECT_FRAMES[i]}
           romanNumeral={ROMAN_NUMERALS[i]}
+          anchorId={PROJECT_ANCHORS[i]}
         />
       ))}
 

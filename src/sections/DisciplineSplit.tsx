@@ -52,7 +52,7 @@ export default function DisciplineSplit() {
             transitionDelay: '100ms',
           }}
         >
-          TWO WORLDS. ONE VISION.
+          TWO WORLDS.<br />ONE VISION.
         </h2>
         <span
           className="block h-[1px] w-[80px] mx-auto mt-6 origin-center transition-transform duration-800"

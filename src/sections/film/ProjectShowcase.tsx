@@ -10,9 +10,10 @@ interface ProjectShowcaseProps {
   project: Project
   frames: Frame[]
   romanNumeral: string
+  anchorId?: string
 }
 
-export default function ProjectShowcase({ project, frames, romanNumeral }: ProjectShowcaseProps) {
+export default function ProjectShowcase({ project, frames, romanNumeral, anchorId }: ProjectShowcaseProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
   const [revealed, setRevealed] = useState(false)
   const [lightboxOpen, setLightboxOpen] = useState(false)
@@ -58,6 +59,7 @@ export default function ProjectShowcase({ project, frames, romanNumeral }: Proje
     <>
       <section
         ref={sectionRef}
+        id={anchorId}
         className="relative"
         style={{
           backgroundColor: 'var(--color-bg-primary)',
