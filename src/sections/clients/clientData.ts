@@ -46,7 +46,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Lucid Air Commercial', year: '2024', type: 'TVC' },
       { name: 'Behind the Scenes', year: '2024', type: 'Documentary' },
     ],
-    tags: ['FILM', 'DIT', 'COLOR GRADE', '35MM'],
+    tags: ['FILM', 'CAM OP', 'SOUND ENGINEER', '35MM'],
     images: ['/film/mch-lucid-car/scene-01.jpg', '/film/mch-lucid-car/scene-10.jpg'],
     layout: 'A',
   },
@@ -58,12 +58,12 @@ export const clientSlides: ClientSlideData[] = [
     projectCount: '2 PROJECTS',
     dateRange: '2023',
     description:
-      'A Red Bull branded documentary on competitive breakdancing. Raw, kinetic energy captured through dynamic movement and intimate portraits of athletes pushing the boundaries of physical expression.',
+      'Captured an action-driven four-day Red Bull paramotor production, following a top athlete through high-intensity preparation, practice runs, precision flight planning, and the final performance day.',
     projects: [
       { name: 'The Breaking Pointe', year: '2023', type: 'Documentary' },
       { name: 'Athlete Portraits', year: '2023', type: 'Photography' },
     ],
-    tags: ['FILM', 'DIRECTOR', 'STEADICAM', 'ACTION'],
+    tags: ['FILM', 'CAM OP', 'SOUND ENGINEER', 'ACTION'],
     images: ['/film/redbull-breaking-pointe/scene-01.jpg', '/film/redbull-breaking-pointe/scene-15.jpg'],
     layout: 'B',
   },
@@ -75,12 +75,12 @@ export const clientSlides: ClientSlideData[] = [
     projectCount: '2 PROJECTS',
     dateRange: '2024',
     description:
-      'A high-octane commercial campaign for the theatrical release of Bad Boys II. Explosive action sequences, dramatic car chases, and the electric energy of Will Smith and Martin Lawrence.',
+      'Worked with the team to capture Will Smith and Martin Lawrence for a 30-second theatrical promotional campaign, building a fast-paced spot around star presence, action energy, and the film\'s signature buddy-cop attitude.',
     projects: [
       { name: 'Bad Boys II Campaign', year: '2024', type: 'TVC' },
       { name: 'Social Cutdowns', year: '2024', type: 'Social' },
     ],
-    tags: ['COMMERCIAL', 'DIRECTOR', 'PRODUCT', 'LIGHTING'],
+    tags: ['COMMERCIAL', 'CAM OP', 'SOUND ENGINEER', 'LIGHTING'],
     images: ['/film/vox-bad-boys-ii/scene-01.jpg', '/film/vox-bad-boys-ii/scene-10.jpg'],
     layout: 'A',
   },
@@ -97,7 +97,7 @@ export const clientSlides: ClientSlideData[] = [
       { name: 'Gen GTI Documentary', year: '2023', type: 'Documentary' },
       { name: 'Social Assets', year: '2023', type: 'Social' },
     ],
-    tags: ['DOCUMENTARY', 'DIRECTOR', 'CINEMATOGRAPHY', '16MM'],
+    tags: ['DOCUMENTARY', 'CAM OP', 'SOUND ENGINEER', '16MM'],
     images: ['/film/vw-gen-gti-docu/scene-01.jpg', '/film/vw-gen-gti-docu/scene-15.jpg'],
     layout: 'B',
   },
@@ -124,18 +124,18 @@ export const testimonials: Testimonial[] = [
     quote:
       'The Lucid Air project was about restraint. Every frame had to breathe. The car\'s lines did the work \u2014 my job was to give them space. Arabic coffee culture became the bridge between heritage and innovation.',
     name: 'FERLAN RACAZA',
-    title: 'Director — Lucid Motors / MCH',
+    title: 'CAM OP — Lucid Motors / MCH',
   },
   {
     quote:
       'With Red Bull, it was all about keeping up. Breakdancers don\'t wait for cameras. We shot handheld, stayed low, and chased the energy. The best moments happened when we were almost too late.',
     name: 'FERLAN RACAZA',
-    title: 'Director — The Breaking Pointe',
+    title: 'CAM OP — The Breaking Pointe',
   },
   {
     quote:
       'Documentary work is listening. The GTI film wasn\'t about cars \u2014 it was about the people who gave decades of their lives to one idea. Their passion carried every frame.',
     name: 'FERLAN RACAZA',
-    title: 'Director — Gen GTI Documentary',
+    title: 'CAM OP — Gen GTI Documentary',
   },
 ];

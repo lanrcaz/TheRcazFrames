@@ -121,7 +121,7 @@ export default function PageHeroAbout() {
             transitionDelay: '600ms',
           }}
         >
-          DIRECTOR &middot; ANIMATOR &middot; VISUAL STORYTELLER
+          CAM OP &middot; SOUND ENGINEER &middot; VISUAL STORYTELLER
         </p>
       </div>
     </section>

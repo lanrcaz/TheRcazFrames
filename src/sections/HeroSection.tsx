@@ -88,7 +88,7 @@ export default function HeroSection() {
             transform: phase >= 3 ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          FILM DIRECTOR &amp; ANIMATOR
+          CAM OP &amp; SOUND ENGINEER
         </span>
 
         {/* Display Title */}

@@ -89,7 +89,7 @@ export default function TestimonialGrid() {
               color: 'var(--color-text-muted)',
             }}
           >
-            DIRECTOR'S NOTES
+            CREATIVE NOTES
           </span>
           <h2
             className="header-el font-display font-light leading-[1.05] mb-4"
