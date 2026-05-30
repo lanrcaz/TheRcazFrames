@@ -10,9 +10,22 @@ interface ClientSlideData {
   bgImage: string
   scene1: string
   scene2: string
+  filmAnchor: string
 }
 
+// ORDER: VOX (I), Lucid (II), Red Bull (III), VW (IV) — matches film page
 const CLIENTS: ClientSlideData[] = [
+  {
+    number: 'I',
+    name: 'VOX CINEMAS',
+    project: 'Bad Boys II \u2014 Theatrical Campaign',
+    description: 'Worked with the team to capture Will Smith and Martin Lawrence for a 30-second theatrical promotional campaign, building a fast-paced spot around star presence, action energy, and the film\'s signature buddy-cop attitude.',
+    metadata: 'CAM OP \u00B7 SOUND ENGINEER \u00B7 CINEMA',
+    bgImage: '/film/vox-bad-boys-ii/scene-15.jpg',
+    scene1: '/film/vox-bad-boys-ii/scene-16.jpg',
+    scene2: '/film/vox-bad-boys-ii/scene-15.jpg',
+    filmAnchor: 'project-vox-bad-boys-ii',
+  },
   {
     number: 'II',
     name: 'LUCID MOTORS / MCH',
@@ -22,6 +35,7 @@ const CLIENTS: ClientSlideData[] = [
     bgImage: '/film/mch-lucid-car/scene-01.jpg',
     scene1: '/film/mch-lucid-car/scene-10.jpg',
     scene2: '/film/mch-lucid-car/scene-17.jpg',
+    filmAnchor: 'project-mch-lucid',
   },
   {
     number: 'III',
@@ -32,19 +46,10 @@ const CLIENTS: ClientSlideData[] = [
     bgImage: '/film/redbull-breaking-pointe/scene-01.jpg',
     scene1: '/film/redbull-breaking-pointe/scene-08.jpg',
     scene2: '/film/redbull-breaking-pointe/scene-15.jpg',
+    filmAnchor: 'project-breaking-pointe',
   },
   {
     number: 'IV',
-    name: 'VOX CINEMAS',
-    project: 'Bad Boys II \u2014 Theatrical Campaign',
-    description: 'Worked with the team to capture Will Smith and Martin Lawrence for a 30-second theatrical promotional campaign, building a fast-paced spot around star presence, action energy, and the film\'s signature buddy-cop attitude.',
-    metadata: 'CAM OP \u00B7 SOUND ENGINEER \u00B7 CINEMA',
-    bgImage: '/film/vox-bad-boys-ii/scene-01.jpg',
-    scene1: '/film/vox-bad-boys-ii/scene-10.jpg',
-    scene2: '/film/vox-bad-boys-ii/scene-16.jpg',
-  },
-  {
-    number: 'V',
     name: 'VOLKSWAGEN',
     project: 'VW Gen GTI \u2014 Branded Documentary',
     description: 'Shot and edited a branded documentary that went beyond the car itself, capturing the Golf GTI culture, long-time enthusiasts, and the people who have lived with the GTI legacy for years.',
@@ -52,6 +57,7 @@ const CLIENTS: ClientSlideData[] = [
     bgImage: '/film/vw-gen-gti-docu/scene-01.jpg',
     scene1: '/film/vw-gen-gti-docu/scene-10.jpg',
     scene2: '/film/vw-gen-gti-docu/scene-20.jpg',
+    filmAnchor: 'project-vw-gen-gti',
   },
 ]
 
@@ -90,159 +96,156 @@ export default function ClientCarousel() {
     return () => observer.disconnect()
   }, [])
 
+  const totalSlides = CLIENTS.length
+
   return (
     <section
       ref={sectionRef}
-      style={{ backgroundColor: 'var(--color-bg-secondary)' }}
+      className="relative overflow-hidden"
+      style={{ backgroundColor: 'var(--color-bg-primary)' }}
     >
       {/* Section Header */}
       <div
         ref={headerRef}
-        className="text-center max-w-[var(--max-narrow-width)] mx-auto"
-        style={{ padding: 'var(--space-section-y) var(--space-page-x) var(--space-component)' }}
+        className="px-[var(--space-page-x)] pt-24 pb-12"
       >
-        <span
-          className="font-mono tracking-[0.2em] uppercase block mb-4 transition-all duration-1000"
-          style={{
-            fontSize: 'clamp(0.6rem, 0.7vw, 0.7rem)',
-            color: 'var(--color-text-muted)',
-            opacity: headerRevealed ? 1 : 0,
-            transform: headerRevealed ? 'translateY(0)' : 'translateY(40px)',
-          }}
-        >
-          CLIENT PORTFOLIO
-        </span>
-        <h2
-          className="font-display font-light tracking-[-0.01em] leading-[1.05] transition-all duration-1000"
-          style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            color: 'var(--color-text-primary)',
-            opacity: headerRevealed ? 1 : 0,
-            transform: headerRevealed ? 'translateY(0)' : 'translateY(40px)',
-            transitionDelay: '100ms',
-          }}
-        >
-          SELECTED WORKS
-        </h2>
-        <p
-          className="font-body font-light leading-[1.7] mt-4 transition-all duration-1000"
-          style={{
-            fontSize: 'clamp(1rem, 1.2vw, 1.125rem)',
-            color: 'var(--color-text-secondary)',
-            opacity: headerRevealed ? 1 : 0,
-            transform: headerRevealed ? 'translateY(0)' : 'translateY(40px)',
-            transitionDelay: '200ms',
-          }}
-        >
-          A curated archive of collaborations with studios, brands, and production houses. Each frame crafted with intention.
-        </p>
-        <span
-          className="block h-[1px] w-[80px] md:w-[120px] mx-auto mt-6 origin-center transition-transform duration-800"
-          style={{
-            backgroundColor: 'var(--color-border)',
-            transform: headerRevealed ? 'scaleX(1)' : 'scaleX(0)',
-            transitionDelay: '300ms',
-          }}
-        />
-      </div>
-
-      {/* Slides */}
-      <div className="relative" style={{ minHeight: '100dvh' }}>
-        {CLIENTS.map((client, index) => (
-          <div
-            key={client.name}
-            className="transition-all duration-700"
+        <div className="max-w-[var(--max-content-width)] mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <span
+              className="font-mono tracking-[0.2em] uppercase block mb-3 transition-all duration-700"
+              style={{
+                fontSize: 'clamp(0.6rem, 0.7vw, 0.7rem)',
+                color: 'var(--color-text-muted)',
+                opacity: headerRevealed ? 1 : 0,
+                transform: headerRevealed ? 'translateY(0)' : 'translateY(20px)',
+              }}
+            >
+              SELECTED WORKS
+            </span>
+            <h2
+              className="font-display font-light leading-[1.05] tracking-[-0.01em] transition-all duration-700"
+              style={{
+                fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                color: 'var(--color-text-primary)',
+                opacity: headerRevealed ? 1 : 0,
+                transform: headerRevealed ? 'translateY(0)' : 'translateY(30px)',
+                transitionDelay: '100ms',
+              }}
+            >
+              SELECTED<br />WORKS
+            </h2>
+          </div>
+          <p
+            className="font-body font-light max-w-[380px] transition-all duration-700"
             style={{
-              opacity: activeSlide === index ? 1 : 0,
-              position: activeSlide === index ? 'relative' : 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              pointerEvents: activeSlide === index ? 'auto' : 'none',
-              transform: activeSlide === index ? 'translateX(0)' : (activeSlide > index ? 'translateX(-60px)' : 'translateX(60px)'),
+              fontSize: 'clamp(0.9375rem, 1.1vw, 1.0625rem)',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.7,
+              opacity: headerRevealed ? 1 : 0,
+              transform: headerRevealed ? 'translateY(0)' : 'translateY(30px)',
+              transitionDelay: '200ms',
             }}
           >
-            <ClientSlide
-              client={client}
-              isActive={activeSlide === index}
-            />
-          </div>
-        ))}
-
-        {/* Slide Navigation Dots */}
-        <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-3">
-          {CLIENTS.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveSlide(index)}
-              className="w-2 h-2 rounded-full transition-all duration-300"
-              style={{
-                backgroundColor: activeSlide === index ? 'var(--color-accent-gold)' : 'var(--color-text-muted)',
-                transform: activeSlide === index ? 'scale(1.3)' : 'scale(1)',
-              }}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-          <span
-            className="font-mono tracking-[0.12em] mt-2"
-            style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-muted)' }}
-          >
-            0{activeSlide + 1} / 0{CLIENTS.length}
-          </span>
+            A curated archive of collaborations with studios, brands, and production houses. Each frame crafted with intention.
+          </p>
         </div>
       </div>
 
-      {/* Stats Bar */}
-      <div
-        style={{
-          backgroundColor: 'var(--color-bg-primary)',
-          padding: 'var(--space-section-y) var(--space-page-x)',
-        }}
-      >
-        <div className="max-w-[900px] mx-auto grid grid-cols-3 gap-8">
-          {[
-            { number: '12+', label: 'PROJECTS' },
-            { number: '12', label: 'CLIENTS' },
-            { number: '10', label: 'YEARS' },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              className="text-center relative"
-              style={{
-                opacity: revealed ? 1 : 0,
-                transform: revealed ? 'translateY(0)' : 'translateY(40px)',
-                transition: 'all 1s cubic-bezier(0.16, 1, 0.3, 1)',
-                transitionDelay: `${600 + i * 100}ms`,
-              }}
-            >
-              {i > 0 && (
-                <span
-                  className="absolute left-0 top-1/2 -translate-y-1/2 h-[40px] w-[1px] hidden sm:block"
-                  style={{ backgroundColor: 'var(--color-border)' }}
-                />
-              )}
-              <span
-                className="font-display font-light block"
-                style={{
-                  fontSize: 'clamp(2rem, 5vw, 3rem)',
-                  color: 'var(--color-text-primary)',
-                }}
-              >
-                {stat.number}
-              </span>
+      {/* Slide Content */}
+      <div className="px-[var(--space-page-x)] pb-24">
+        <div className="max-w-[var(--max-content-width)] mx-auto">
+          {/* Slide Display */}
+          <div className="relative">
+            {CLIENTS.map((client, index) => (
+              <ClientSlide
+                key={client.name}
+                client={client}
+                isActive={index === activeSlide}
+              />
+            ))}
+          </div>
+
+          {/* Navigation */}
+          <div
+            className="flex items-center justify-between mt-12 transition-all duration-700"
+            style={{
+              opacity: revealed ? 1 : 0,
+              transform: revealed ? 'translateY(0)' : 'translateY(30px)',
+              transitionDelay: '600ms',
+            }}
+          >
+            {/* Slide Counter */}
+            <div className="flex items-center gap-4">
               <span
                 className="font-mono tracking-[0.12em]"
-                style={{ fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)', color: 'var(--color-text-tertiary)' }}
+                style={{
+                  fontSize: 'clamp(0.75rem, 0.9vw, 0.875rem)',
+                  color: 'var(--color-text-muted)',
+                }}
               >
-                {stat.label}
+                0{activeSlide + 1} / 0{totalSlides}
               </span>
             </div>
-          ))}
+
+            {/* Arrows + Indicators */}
+            <div className="flex items-center gap-6">
+              {/* Dot indicators */}
+              <div className="flex gap-2">
+                {CLIENTS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveSlide(i)}
+                    className="transition-all duration-300"
+                    style={{
+                      width: activeSlide === i ? '32px' : '8px',
+                      height: '8px',
+                      borderRadius: '4px',
+                      backgroundColor: activeSlide === i ? '#C9A96E' : 'var(--color-text-muted)',
+                      opacity: activeSlide === i ? 1 : 0.4,
+                    }}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Arrow buttons */}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setActiveSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))}
+                  className="w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    color: 'var(--color-text-primary)',
+                  }}
+                  aria-label="Previous slide"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => setActiveSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))}
+                  className="w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    color: 'var(--color-text-primary)',
+                  }}
+                  aria-label="Next slide"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+
+/* ─── Slide Sub-Component ─── */
 
 function ClientSlide({
   client,
@@ -251,161 +254,147 @@ function ClientSlide({
   client: ClientSlideData
   isActive: boolean
 }) {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    if (isActive) {
+      const timer = setTimeout(() => setVisible(true), 50)
+      return () => clearTimeout(timer)
+    } else {
+      setVisible(false)
+    }
+  }, [isActive])
+
+  if (!isActive) return null
+
+  const DELAY_NUMBER = 100
+  const DELAY_NAME = 200
+  const DELAY_PROJECT = 300
+  const DELAY_DESC = 400
+  const DELAY_META = 500
+
   return (
-    <div className="relative min-h-[100dvh] overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src={client.bgImage}
-          alt={client.name}
-          className="w-full h-full object-cover"
-          style={{ filter: 'brightness(0.4)' }}
-        />
-        <div
-          className="absolute inset-0"
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
+      {/* Left: Text Content */}
+      <div className="flex flex-col justify-center lg:pr-12">
+        {/* Roman numeral */}
+        <span
+          className="font-display leading-none mb-4 transition-all duration-700"
           style={{
-            background: 'linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%)',
+            fontSize: 'clamp(4rem, 10vw, 8rem)',
+            color: 'var(--color-text-muted)',
+            opacity: 0.15,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: `${DELAY_NUMBER}ms`,
           }}
-        />
+        >
+          {client.number}
+        </span>
+
+        {/* Client name */}
+        <h3
+          className="font-display font-light leading-[1.05] mb-2 transition-all duration-700"
+          style={{
+            fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+            color: 'var(--color-text-primary)',
+            letterSpacing: '-0.01em',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(30px)',
+            transitionDelay: `${DELAY_NAME}ms`,
+          }}
+        >
+          {client.name}
+        </h3>
+
+        {/* Project name */}
+        <p
+          className="font-mono tracking-[0.1em] uppercase mb-4 transition-all duration-700"
+          style={{
+            fontSize: 'clamp(0.7rem, 0.85vw, 0.8rem)',
+            color: 'var(--color-text-tertiary)',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(30px)',
+            transitionDelay: `${DELAY_PROJECT}ms`,
+          }}
+        >
+          {client.project}
+        </p>
+
+        {/* Description */}
+        <p
+          className="font-body font-light max-w-[480px] mb-5 transition-all duration-700"
+          style={{
+            fontSize: 'clamp(0.9375rem, 1.1vw, 1.0625rem)',
+            color: 'var(--color-text-secondary)',
+            lineHeight: 1.7,
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(30px)',
+            transitionDelay: `${DELAY_DESC}ms`,
+          }}
+        >
+          {client.description}
+        </p>
+
+        {/* Metadata */}
+        <span
+          className="font-mono tracking-[0.12em] uppercase mb-6 transition-all duration-700"
+          style={{
+            fontSize: 'clamp(0.6rem, 0.7vw, 0.7rem)',
+            color: 'var(--color-text-muted)',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(20px)',
+            transitionDelay: `${DELAY_META}ms`,
+          }}
+        >
+          {client.metadata}
+        </span>
+
+        {/* VIEW FULL PROJECT — links directly to the project on film page */}
+        <div
+          className="mt-2 transition-all duration-1000"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(40px)',
+            transitionDelay: '500ms',
+          }}
+        >
+          <Link
+            to={`/film#${client.filmAnchor}`}
+            className="group inline-flex items-center gap-2 font-body text-xs font-medium tracking-[0.15em] uppercase text-[#C9A96E] transition-colors duration-300 hover:text-[#D4B87A]"
+          >
+            <span className="relative">
+              VIEW FULL PROJECT
+              <span className="absolute -bottom-0.5 left-0 h-[1px] w-full bg-[#C9A96E] origin-left transition-transform duration-300 scale-x-40 group-hover:scale-x-100" />
+            </span>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </Link>
+        </div>
       </div>
 
-      {/* Content */}
-      <div
-        className="relative z-10 grid grid-cols-1 lg:grid-cols-[45%_55%] min-h-[100dvh] items-center"
-        style={{ padding: 'var(--space-section-y) var(--space-page-x)' }}
-      >
-        {/* Left: Text Content */}
-        <div className="relative">
-          {/* Decorative Number */}
-          <span
-            className="absolute -top-16 -left-4 font-display font-light select-none pointer-events-none hidden lg:block"
+      {/* Right: Screenshot Grid */}
+      <div className="hidden lg:grid grid-cols-2 gap-4 mt-8 lg:mt-0 lg:pl-12">
+        {[client.scene1, client.scene2].map((scene, i) => (
+          <div
+            key={scene}
+            className="overflow-hidden transition-all duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             style={{
-              fontSize: 'clamp(6rem, 12vw, 10rem)',
-              color: 'var(--color-text-muted)',
-              lineHeight: 1,
-              letterSpacing: '-0.03em',
-              opacity: 0.15,
+              clipPath: visible ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)',
+              transitionDelay: `${400 + i * 150}ms`,
             }}
           >
-            {client.number}
-          </span>
-
-          <div className="relative z-10">
-            <span
-              className="font-mono tracking-[0.2em] uppercase block mb-3 transition-all duration-1000"
-              style={{
-                fontSize: 'clamp(0.6rem, 0.7vw, 0.7rem)',
-                color: 'var(--color-text-muted)',
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: '0ms',
-              }}
-            >
-              CLIENT
-            </span>
-            <h3
-              className="font-display font-normal leading-[1.1] transition-all duration-1000"
-              style={{
-                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                letterSpacing: '0.02em',
-                color: 'var(--color-text-primary)',
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: '100ms',
-              }}
-            >
-              {client.name}
-            </h3>
-            <p
-              className="font-body font-medium tracking-[0.08em] mt-3 transition-all duration-1000"
-              style={{
-                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                color: 'var(--color-text-secondary)',
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: '200ms',
-              }}
-            >
-              {client.project}
-            </p>
-            <p
-              className="font-body leading-[1.7] mt-4 max-w-[380px] transition-all duration-1000"
-              style={{
-                fontSize: 'clamp(0.875rem, 1vw, 1rem)',
-                color: 'var(--color-text-secondary)',
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: '300ms',
-              }}
-            >
-              {client.description}
-            </p>
-            <span
-              className="font-mono tracking-[0.12em] block mt-4 transition-all duration-1000"
-              style={{
-                fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)',
-                color: 'var(--color-text-tertiary)',
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: '400ms',
-              }}
-            >
-              {client.metadata}
-            </span>
             <div
-              className="mt-6 transition-all duration-1000"
-              style={{
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(40px)',
-                transitionDelay: '500ms',
-              }}
+              className="aspect-[16/10] overflow-hidden"
+              style={{ backgroundColor: 'var(--color-bg-secondary)' }}
             >
-              <Link
-                to="/clients"
-                onClick={() => window.scrollTo(0, 0)}
-                className="group inline-flex items-center gap-2 font-body text-xs font-medium tracking-[0.15em] uppercase text-[#C9A96E] transition-colors duration-300 hover:text-[#D4B87A]"
-              >
-                <span className="relative">
-                  VIEW FULL PROJECT
-                  <span className="absolute -bottom-0.5 left-0 h-[1px] w-full bg-[#C9A96E] origin-left transition-transform duration-300 scale-x-40 group-hover:scale-x-100" />
-                </span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-              </Link>
+              <img
+                src={scene}
+                alt={`${client.name} — ${client.project}`}
+                className="w-full h-full object-cover transition-transform duration-[800ms] hover:scale-105"
+                loading="lazy"
+              />
             </div>
           </div>
-        </div>
-
-        {/* Right: Screenshot Grid */}
-        <div className="hidden lg:grid grid-cols-2 gap-4 mt-8 lg:mt-0 lg:pl-12">
-          {[client.scene1, client.scene2].map((scene, i) => (
-            <div
-              key={scene}
-              className="overflow-hidden rounded-[var(--border-radius-md)] group cursor-pointer"
-              style={{
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(40px)',
-                transition: `all 1s cubic-bezier(0.16, 1, 0.3, 1) ${600 + i * 150}ms`,
-                clipPath: isActive ? 'inset(0% 0 0 0)' : 'inset(100% 0 0 0)',
-              }}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={scene}
-                  alt={`${client.name} scene ${i + 1}`}
-                  className="w-full aspect-video object-cover transition-transform duration-600 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span
-                    className="font-mono tracking-[0.2em] uppercase"
-                    style={{ fontSize: 'clamp(0.6rem, 0.7vw, 0.7rem)', color: 'var(--color-text-primary)' }}
-                  >
-                    EXPAND
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import type { ClientSlideData } from './clientData'
-import { ArrowRight } from 'lucide-react'
 
 interface ClientSlideProps {
   data: ClientSlideData
@@ -38,7 +38,6 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
   const DELAY_DESC = 500
   const DELAY_PROJECTS = 600
   const DELAY_TAGS = 700
-  const DELAY_CTA = 800
 
   const contentPanel = (
     <div className="relative flex flex-col justify-center" style={{ padding: '3rem' }}>
@@ -171,14 +170,19 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
               className="font-mono tracking-[0.08em] transition-all duration-700"
               style={{
                 fontSize: 'clamp(0.65rem, 0.8vw, 0.75rem)',
-                color: 'var(--color-text-tertiary)',
                 opacity: visible ? 1 : 0,
                 transform: visible ? 'translateY(0)' : 'translateY(20px)',
                 transitionDelay: `${DELAY_PROJECTS + i * 80}ms`,
                 transitionProperty: 'opacity, transform',
               }}
             >
-              {project.name} ({project.year}) — {project.type}
+              <Link
+                to={`/film#${data.filmAnchor}`}
+                className="transition-colors duration-300 hover:text-[#C9A96E]"
+                style={{ color: 'var(--color-text-tertiary)' }}
+              >
+                {project.name} ({project.year}) — {project.type}
+              </Link>
             </li>
           ))}
         </ul>
@@ -209,30 +213,7 @@ export default function ClientSlide({ data, index }: ClientSlideProps) {
           ))}
         </div>
 
-        {/* CTA */}
-        <a
-          href="#"
-          className="group inline-flex items-center gap-2 font-body font-medium uppercase tracking-[0.15em] transition-colors duration-300 hover:text-[#D4B87A]"
-          style={{
-            fontSize: '0.75rem',
-            color: '#C9A96E',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(20px)',
-            transitionDelay: `${DELAY_CTA}ms`,
-            transition: 'opacity 0.8s ease, transform 0.8s ease, color 0.3s ease',
-          }}
-        >
-          <span className="relative">
-            VIEW FULL CASE STUDY
-            <span
-              className="absolute -bottom-1 left-0 h-[1px] w-full origin-left transition-transform duration-300 scale-x-50 group-hover:scale-x-100"
-              style={{ backgroundColor: '#C9A96E' }}
-            />
-          </span>
-          <ArrowRight
-            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-          />
-        </a>
+
       </div>
     </div>
   )

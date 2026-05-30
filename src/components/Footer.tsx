@@ -18,7 +18,6 @@ const DISCIPLINE_LINKS = [
 
 const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: 'https://linkedin.com/in/ferlanracaza' },
-  { label: 'Portfolio', href: 'https://ferlanportfolio.my.canva.site/ferlanmotionworks' },
   { label: 'GitHub', href: 'https://github.com/lanrcaz' },
   { label: 'Email', href: 'mailto:ferlan.racaza@gmail.com' },
 ]

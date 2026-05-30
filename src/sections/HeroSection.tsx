@@ -50,9 +50,10 @@ export default function HeroSection() {
         }}
       >
         <img
-          src="/film/travel-series/scene-01.jpg"
-          alt="Dubai travel series — Burj Khalifa aerial"
-          className="w-full h-full object-cover"
+          src="/home-banner.jpg?v=3"
+          alt="The R'CAZ Frames — cinematic showreel"
+          className="w-full h-full object-contain"
+          style={{ backgroundColor: '#0a0a0a', filter: 'brightness(0.55)' }}
         />
       </div>
 
@@ -140,7 +141,7 @@ export default function HeroSection() {
             transform: phase >= 3 ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          Film Is the Focus. Motion Is the Foundation. Twelve Years, Two Disciplines, One Frame at a Time.
+          FILM IS THE FOCUS. MOTION IS THE FOUNDATION. TWELVE YEARS, TWO DISCIPLINES, ONE FRAME AT A TIME.
         </p>
 
         {/* Meta Strip */}

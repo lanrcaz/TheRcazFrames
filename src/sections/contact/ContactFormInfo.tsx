@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { Loader2, Mail, Phone, MapPin, Linkedin, Clock, Github, ExternalLink } from 'lucide-react'
+import { Loader2, Mail, Phone, MapPin, Linkedin, Clock, Github } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -558,17 +558,6 @@ export default function ContactFormInfo() {
               >
                 <Github size={20} />
               </a>
-              <a
-                href="https://ferlanportfolio.my.canva.site/ferlanmotionworks"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-all duration-200 hover:text-[#C9A96E] hover:scale-[1.15]"
-                style={{ color: 'var(--color-text-muted)' }}
-                aria-label="Portfolio"
-              >
-                <ExternalLink size={20} />
-              </a>
-
             </div>
           </div>
 
