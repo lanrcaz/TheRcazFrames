@@ -6,7 +6,7 @@ type FilterMode = 'film' | 'both' | 'motion'
 
 const FEATURED_DATA = {
   film: {
-    image: '/film/travel-series/scene-05.jpg',
+    image: '/film/travel-series/scene-08.jpg',
     meta: '2024 \u00B7 COMMERCIAL \u00B7 3 MIN',
     title: 'TRAVEL SERIES \u2014 MUSIC PRODUCER',
     desc: 'A cinematic travel series filmed across Dubai \u2014 from the soaring heights of the Burj Khalifa to golden hour yacht moments. Capturing the intersection of culture, luxury, and sound.',
@@ -117,7 +117,7 @@ export default function FeaturedWork() {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] gap-[5%]">
+        <div className="grid grid-cols-1 lg:grid-cols-[58%_38%] gap-[4%] items-start">
           {/* Left: Image */}
           <div
             className="transition-all duration-1000"
@@ -141,7 +141,7 @@ export default function FeaturedWork() {
           </div>
 
           {/* Right: Content */}
-          <div className="flex flex-col justify-center mt-8 lg:mt-0">
+          <div className="flex flex-col justify-start lg:pt-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={filter}
@@ -176,7 +176,7 @@ function SingleImage({ image, alt }: { image: string; alt: string }) {
       <img
         src={image}
         alt={alt}
-        className="w-full aspect-video object-cover transition-transform duration-600 group-hover:scale-[1.03]"
+        className="w-full aspect-[4/3] object-cover transition-transform duration-600 group-hover:scale-[1.03]"
       />
     </motion.div>
   )
@@ -195,14 +195,14 @@ function BothImages() {
         <img
           src={FEATURED_DATA.film.image}
           alt={FEATURED_DATA.film.title}
-          className="w-full aspect-video object-cover transition-transform duration-600 group-hover:scale-[1.03]"
+          className="w-full aspect-[4/3] object-cover transition-transform duration-600 group-hover:scale-[1.03]"
         />
       </div>
       <div className="overflow-hidden rounded-[var(--border-radius-md)] group cursor-pointer">
         <img
           src={FEATURED_DATA.motion.image}
           alt={FEATURED_DATA.motion.title}
-          className="w-full aspect-video object-cover transition-transform duration-600 group-hover:scale-[1.03]"
+          className="w-full aspect-[4/3] object-cover transition-transform duration-600 group-hover:scale-[1.03]"
         />
       </div>
     </motion.div>
@@ -236,7 +236,7 @@ function BothContent() {
           color: 'var(--color-text-secondary)',
         }}
       >
-        Film is the focus — motion is the foundation. Explore work across directing, branded content, and motion graphics systems.
+        Film is the focus — motion is the foundation. Explore TVC work, branded content, and motion graphics systems.
       </p>
       <div className="mt-6 flex flex-col sm:flex-row gap-4">
         <Link

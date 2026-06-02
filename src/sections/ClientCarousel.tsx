@@ -109,7 +109,7 @@ export default function ClientCarousel() {
         ref={headerRef}
         className="px-[var(--space-page-x)] pt-24 pb-12"
       >
-        <div className="max-w-[var(--max-content-width)] mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div className="max-w-[var(--max-content-width)] mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           <div>
             <span
               className="font-mono tracking-[0.2em] uppercase block mb-3 transition-all duration-700"
@@ -146,7 +146,7 @@ export default function ClientCarousel() {
               transitionDelay: '200ms',
             }}
           >
-            A curated archive of collaborations with studios, brands, and production houses. Each frame crafted with intention.
+            A curated archive of TVC collaborations and nationwide government campaigns across the UAE and GCC. Each frame captured with intention.
           </p>
         </div>
       </div>
