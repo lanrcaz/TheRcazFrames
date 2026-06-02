@@ -38,7 +38,7 @@ export default function BioSection() {
         >
           <div className="overflow-hidden rounded-[var(--border-radius-md)] group">
             <img
-              src="/film/travel-series/scene-01.jpg"
+              src="/about-portrait.jpg?v=2"
               alt="Ferlan Racaza — Senior Creative, Create Production DXB"
               className="w-full aspect-[3/4] object-cover transition-transform duration-[600ms] group-hover:scale-[1.02]"
             />

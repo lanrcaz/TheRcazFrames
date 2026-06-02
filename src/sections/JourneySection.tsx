@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 
 const STATS = [
   { value: '12+', label: 'YEARS OF CRAFT' },
-  { value: '3', label: 'FEATURED FILMS' },
+  { value: 'TVC', label: 'COMMERCIAL & CAMPAIGN' },
   { value: 'DUBAI', label: 'BASED IN UAE' },
   { value: '2017', label: 'AT CREATE PROD DXB' },
 ]
